@@ -1,0 +1,20 @@
+﻿@using BouquetStore.Domain.Entities
+@model IEnumerable<Product>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+<table class="table table-striped">
+    <tr><th>Product</th><th>Price</th></tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Name</td>
+            <td>@item.Price.ToString()</td>
+        </tr>
+    }
+</table>
+
