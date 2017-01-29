@@ -24,13 +24,19 @@ img{
 }
 .season-purpose p {
 	padding-top: 10px;
+
 }
 .season-picture {
 	height: 150px;
 	padding-left: 10px;
 }
-div .season-picture > a {
-	padding-top: 5px;
+.season-picture p {
+	 text-align: center;
+	 padding-top: 55px;
+	 padding-right: 15px;
+}
+div .season-purpose > a {
+	margin-top: 10px;
 }
 /*.row-fix {
 	margin-right: 0;
