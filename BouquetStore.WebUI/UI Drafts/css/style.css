@@ -1,0 +1,31 @@
+ * {
+    margin: 0;
+    padding: 0;
+   }
+img{
+/*	min-height: 100px;
+	max-height: 500px;*/
+	height: 300px;
+}
+.sale {
+	height: 50px;
+}
+.sale p {
+	font-family: Verdana, Arial, Helvetica, sans-serif; 
+    font-size: 20pt; /* Размер шрифта в пунктах */ 
+    text-align: center;
+}
+.border-test{
+	border: 1px solid black;
+}
+.season-purpose {
+	height: 250px;
+	text-align: center;
+}
+.season-purpose p {
+	padding-top: 10px;
+}
+.season-picture {
+	height: 150px;
+	padding-left: 10px;
+}
