@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Document</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/style.css" rel="stylesheet">
+	<!--<link href="css/style.css" rel="stylesheet">-->
+    <style>
+        .product-btn{ margin-top: 10px; }
+    </style>
 </head>
 <body>
 	<!-- making up carousel -->
@@ -21,19 +24,19 @@
 		<!-- Slider content -->
 		<div class="carousel-inner">
 	  		<div class="item active">
-	    		<img src="sliderimage/1.jpg" style="height: 300px;" alt="firstimage">
+	    		<img src="sliderimage/1.jpg" class="center-block" alt="firstimage">
 	    			<div class="carousel-caption">
 	      				<p>FRUIT IS GOOOD</p>
 	    			</div>
 	  		</div>
 	  		<div class="item">
-	  			<img src="sliderimage/2.jpg" style="height: 300px;" alt="secondimage">
+	  			<img src="sliderimage/2.jpg" class="center-block" alt="secondimage">
 	  			<div class="carousel-caption">
 	  				<p>FRUIT IS GOOOD</p>
 	  			</div>
 	  		</div>
 	  		<div class="item">
-	  			<img src="sliderimage/3.jpg" style="height: 300px;" alt="secondimage">
+	  			<img src="sliderimage/3.jpg" class="center-block" alt="secondimage">
 	  			<div class="carousel-caption">
 	  				<p>FRUIT IS GOOOD</p>
 	  			</div>
@@ -81,65 +84,91 @@
 			<div class="col-md-2"></div>
 		</div>
 	</div>
-	<div class="sale">
-		<p>SALE SALE SALE</p>
-	</div>
 	<!-- Season purposals -->
 	<div class="container">
-		<div class="row">
-	    	<div class="col-md-2 "></div>
-	    		<div class="col-md-8  season-purpose">
-	    			<div class="col-md-4  season-purpose">
-	    				<p>Bucket 1</p>
-	    				<div class="season-picture border-test">
-	    					<p>PHOTO</p>
-	    				</div>
-	    				<a href="#" class="btn btn-success btn-md">Показать</a>
-	    			</div>
-	    			<div class="col-md-4  season-purpose">
-	    				<p>Bucket 2</p>
-	    				<div class="season-picture border-test">
-	    					<p>PHOTO</p>
-	    				</div>
-	    				<a href="#" class="btn btn-success btn-md">Показать</a>
-	    			</div>
-	    			<div class="col-md-4 season-purpose">
-	    				<p>Bucket 3</p>
-	    				<div class="season-picture border-test">
-	    					<p>PHOTO</p>
-	    				</div>
-	    				<a href="#" class="btn btn-success btn-md">Показать</a>
-	    			</div>
-	    		</div>
-	    	<div class="col-md-2"></div>
+	    <div class="row text-center">
+		    <h2>SALE SALE SALE</h2>
 	    </div>
-	</div>
-	<div class="container">
 		<div class="row">
-	    	<div class="col-md-2"></div>
-	    		<div class="col-md-8 season-purpose">
-	    			<div class="col-md-4 season-purpose">
-	    				<p>Bucket 1</p>
-	    				<div class="season-picture border-test">
-	    					<p>PHOTO</p>
-	    				</div>
-	    				<a href="#" class="btn btn-success btn-md">Показать</a>
-	    			</div>
-	    			<div class="col-md-4  season-purpose">
-	    				<p>Bucket 2</p>
-	    				<div class="season-picture border-test">
-	    					<p>PHOTO</p>
-	    				</div>
-	    				<a href="#" class="btn btn-success btn-md">Показать</a>
-	    			</div>
-	    			<div class="col-md-4  season-purpose">
-	    				<p>Bucket 3</p>
-	    				<div class="season-picture border-test">
-	    					<p>PHOTO</p>
-	    				</div>
-	    				<a href="#" class="btn btn-success btn-md">Показать</a>
-	    			</div>
-	    		</div>
+            <div class="col-md-2 "></div>
+            <div class="col-md-8  season-purpose">
+                <div class="row">
+                    <div class="col-md-4 season-purpose">
+                        <div class="panel panel-default text-center">
+                            <h4>Bucket 1</h4>
+                            <div class="panel-body  text-center">
+                                <div class="season-picture border-test">
+                                    <img src="img/bouquet-example.jpg" class="img-responsive center-block" alt="firstimage">
+                                </div>
+                                <a href="#" class="btn btn-success btn-md product-btn" role="button">Показать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 season-purpose">
+                        <div class="panel panel-default text-center">
+                            <h4>Bucket 2</h4>
+                            <div class="panel-body">
+                                <div class="season-picture border-test">
+                                    <img src="img/bouquet-example.jpg" class="img-responsive center-block" alt="firstimage">
+                                </div>
+                                <a href="#" class="btn btn-success btn-md product-btn" role="button">Показать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 season-purpose">
+                        <div class="panel panel-default text-center">
+                            <h4>Bucket 3</h4>
+                            <div class="panel-body">
+                                <div class="season-picture border-test">
+                                    <img src="img/bouquet-example.jpg" class="img-responsive center-block" alt="firstimage">
+                                </div>
+                                <a href="#" class="btn btn-success btn-md product-btn" role="button">Показать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+	    </div>
+		<div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 season-purpose">
+                <div class="row">
+                    <div class="col-md-4 season-purpose">
+                        <div class="panel panel-default text-center">
+                            <h4>Bucket 4</h4>
+                            <div class="panel-body">
+                                <div class="season-picture border-test">
+                                    <img src="img/bouquet-example.jpg" class="img-responsive center-block" alt="firstimage">
+                                </div>
+                                <a href="#" class="btn btn-success btn-md product-btn" role="button">Показать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 season-purpose">
+                        <div class="panel panel-default text-center">
+                            <h4>Bucket 5</h4>
+                            <div class="panel-body">
+                                <div class="season-picture border-test">
+                                    <img src="img/bouquet-example.jpg" class="img-responsive center-block" alt="firstimage">
+                                </div>
+                                <a href="#" class="btn btn-success btn-md product-btn" role="button">Показать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 season-purpose">
+                        <div class="panel panel-default text-center">
+                            <h4>Bucket 6</h4>
+                            <div class="panel-body">
+                                <div class="season-picture border-test">
+                                    <img src="img/bouquet-example.jpg" class="img-responsive center-block" alt="firstimage">
+                                </div>
+                                <a href="#" class="btn btn-success btn-md product-btn" role="button">Показать</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 	    	<div class="col-md-2"></div>
 	    </div>
 	</div>
