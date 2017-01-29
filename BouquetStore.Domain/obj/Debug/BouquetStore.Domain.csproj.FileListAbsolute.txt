@@ -16,3 +16,8 @@ D:\Visual Studio Projects\BouquetStore\BouquetStore.Domain\bin\Debug\System.Web.
 D:\Visual Studio Projects\BouquetStore\BouquetStore.Domain\obj\Debug\BouquetStore.Domain.csprojResolveAssemblyReference.cache
 D:\Visual Studio Projects\BouquetStore\BouquetStore.Domain\obj\Debug\BouquetStore.Domain.dll
 D:\Visual Studio Projects\BouquetStore\BouquetStore.Domain\obj\Debug\BouquetStore.Domain.pdb
+D:\Visual Studio Projects\BouquetStore\BouquetStore.Domain\bin\Debug\BouquetStore.Domain.dll.config
+D:\Visual Studio Projects\BouquetStore\BouquetStore.Domain\bin\Debug\EntityFramework.dll
+D:\Visual Studio Projects\BouquetStore\BouquetStore.Domain\bin\Debug\EntityFramework.SqlServer.dll
+D:\Visual Studio Projects\BouquetStore\BouquetStore.Domain\bin\Debug\EntityFramework.xml
+D:\Visual Studio Projects\BouquetStore\BouquetStore.Domain\bin\Debug\EntityFramework.SqlServer.xml

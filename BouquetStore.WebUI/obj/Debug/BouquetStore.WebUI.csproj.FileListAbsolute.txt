@@ -57,3 +57,7 @@ D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\bin\System.Web.Mvc.xml
 D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\obj\Debug\BouquetStore.WebUI.csprojResolveAssemblyReference.cache
 D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\obj\Debug\BouquetStore.WebUI.dll
 D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\obj\Debug\BouquetStore.WebUI.pdb
+D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\bin\EntityFramework.dll
+D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\bin\EntityFramework.SqlServer.dll
+D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\bin\EntityFramework.xml
+D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\bin\EntityFramework.SqlServer.xml
