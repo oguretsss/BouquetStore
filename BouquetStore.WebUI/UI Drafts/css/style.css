@@ -1,18 +1,13 @@
- * {
-    margin: 0;
-    padding: 0;
-   }
+/*
 img{
 /*	min-height: 100px;
-	max-height: 500px;*/
+	max-height: 500px;
 	height: 300px;
 }
-.sale {
-	height: 50px;
-}
+
 .sale p {
 	font-family: Verdana, Arial, Helvetica, sans-serif; 
-    font-size: 20pt; /* Размер шрифта в пунктах */ 
+    font-size: 20pt; /* Размер шрифта в пунктах 
     text-align: center;
 }
 .border-test{
@@ -28,4 +23,16 @@ img{
 .season-picture {
 	height: 150px;
 	padding-left: 10px;
+}*/
+ .product-btn{ 
+ 	margin-top: 10px; 
+ }
+/* .sale {
+	height: 35px;
+	font-size: 25px;
+	margin-bottom: 0;
+}*/
+h3 {
+	 margin-top: 0em;
+	/* margin-bottom: 0em;*/
 }
