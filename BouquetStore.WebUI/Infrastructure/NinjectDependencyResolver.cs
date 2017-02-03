@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using Ninject;
 using BouquetStore.Domain.Abstract;
 using BouquetStore.Domain.Entities;
+using BouquetStore.Domain.Concrete;
 using Moq;
 
 namespace BouquetStore.WebUI.Infrastructure
@@ -33,13 +34,7 @@ namespace BouquetStore.WebUI.Infrastructure
         private void AddBindings()
         {
             //Add bindings here
-            Mock<IProductRepository> mock = new Mock<IProductRepository>();
-            mock.Setup(m => m.Products).Returns(new List<Product> {
-                new Product { Name = "Bouquet1", Price = 25 },
-                new Product { Name = "Bouquet2", Price = 179 },
-                new Product { Name = "Bouquet3", Price = 95 }
-             });
-            kernel.Bind<IProductRepository>().ToConstant(mock.Object);
+            kernel.Bind<IProductRepository>().To<EFProductRepository>();
         }
     }
 }
