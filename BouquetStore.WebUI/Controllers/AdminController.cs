@@ -27,5 +27,39 @@ namespace BouquetStore.WebUI.Controllers
                 FirstOrDefault(x => x.ProductID == productID);
             return View(product);
         }
+
+        [HttpPost]
+        public ActionResult Edit(Product product)
+        {
+            if (ModelState.IsValid)
+            {
+                repository.SaveProduct(product);
+                TempData["message"] = string.Format("Продукт \"{0}\" успешно сохранен", product.Name);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                // there is something wrong with the data values
+                return View(product);
+            }
+        }
+
+        public ViewResult Create()
+        {
+            return View("Edit", new Product());
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int productId)
+        {
+            Product deletedProduct = repository.DeleteProduct(productId);
+            if (deletedProduct != null)
+            {
+                TempData["message"] = string.Format("Продукт \"{0}\" успешно удален",
+                deletedProduct.Name);
+            }
+            return RedirectToAction("Index");
+        }
+
     }
 }

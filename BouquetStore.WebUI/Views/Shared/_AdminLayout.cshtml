@@ -6,9 +6,14 @@
     <title>@ViewBag.Title</title>
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap-theme.css" rel="stylesheet" />
-    <!--<link href="~/Content/ErrorStyles.css" rel="stylesheet" />-->
+    <link href="~/Content/css/error-styles.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
 </head>
 <body>
+    @if (TempData["message"] != null)
+    {
+        <div class="alert alert-success">@TempData["message"]</div>
+    }
     <div>
         @RenderBody()
     </div>
