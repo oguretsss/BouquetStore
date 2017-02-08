@@ -1,7 +1,5 @@
 ﻿using BouquetStore.Domain.Abstract;
 using BouquetStore.Domain.Entities;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -29,8 +27,14 @@ namespace BouquetStore.WebUI.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(Product product)
+        public ActionResult Edit(Product product, HttpPostedFileBase image = null)
         {
+            if (image != null)
+            {
+                product.ImageMimeType = image.ContentType;
+                product.ImageData = new byte[image.ContentLength];
+                image.InputStream.Read(product.ImageData, 0, image.ContentLength);
+            }
             if (ModelState.IsValid)
             {
                 repository.SaveProduct(product);
