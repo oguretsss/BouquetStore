@@ -8,6 +8,7 @@
 <div class="container">
     <div class="col-md-2"></div>
     <div class="col-md-8">
+        <h2>Все букеты</h2>
         <div class="panel-group" id="accordion">
 
             @foreach (var item in Model)
@@ -16,32 +17,31 @@
                     <div class="panel-heading">
                         <div class="panel-title">
                             <div class="pull-left">
+                                <b>@item.ProductID </b>
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse@(++i)">
                                     @item.Name
                                 </a>
                             </div>
-                            <div class="pull-right">@item.Price.ToString("c")</div>
+                            <div class="pull-right">
+                                @using (Html.BeginForm("Delete", "Admin", FormMethod.Post, new { onsubmit="return confirm(\"Вы уверены?\");" }))
+                                {
+                                    @Html.Hidden("productID", item.ProductID)
+                                    <label for="submit-delete+@item.ProductID.ToString()" class="btn btn-product-header"><span class="glyphicon glyphicon-remove"></span></label>
+                                    <input id="submit-delete+@item.ProductID.ToString()" type="submit"
+                                           class="hidden"
+                                           value="Удалить" />
+                                }
+                            </div>
+                            <div class="pull-right"><a href="@Url.Action("Edit", "Admin", new { item.ProductID })" class="btn btn-product-header"><span class="glyphicon glyphicon-edit"></span></a></div>
+                            <div class="pull-right"><b>Цена: </b>@item.Price.ToString("c")</div>
                             <div class="clearfix"></div>
                         </div>
                     </div>
                     <div id="collapse@(i)" class="panel-collapse collapse @(i == 1 ? "in" : "")">
                         <div class="panel-body">
                             <p>@item.Description</p>
-                            <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" />
+                            <img class="img-responsive" src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" />
                         </div>
-                    </div>
-                    <div class="panel-footer">
-                        <div class="pull-left">
-                            @using (Html.BeginForm("Delete", "Admin"))
-                            {
-                                @Html.Hidden("ProductID", item.ProductID)
-                                <input type="submit"
-                                       class="btn btn-danger"
-                                       value="Удалить" />
-                            }
-                        </div>
-                        <div class="pull-right">@Html.ActionLink("Редактировать", "Edit", new { item.ProductID }, new { @class = "btn btn-warning" })</div>
-                        <div class="clearfix"></div>
                     </div>
                 </div>
             }
