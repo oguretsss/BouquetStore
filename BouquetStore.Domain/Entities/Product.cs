@@ -25,5 +25,6 @@ namespace BouquetStore.Domain.Entities
         public byte[] ImageData { get; set; }
         [HiddenInput(DisplayValue = false)]
         public string ImageMimeType { get; set; }
+        public bool IsSeasonPromo { get; set; }
     }
 }

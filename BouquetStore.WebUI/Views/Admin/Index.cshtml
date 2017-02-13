@@ -22,6 +22,10 @@
                                     @item.Name
                                 </a>
                             </div>
+                            @if (item.IsSeasonPromo)
+                            {
+                                <div class="label label-danger pull-left top">СЕЗОННОЕ</div>
+                            }
                             <div class="pull-right">
                                 @using (Html.BeginForm("Delete", "Admin", FormMethod.Post, new { onsubmit="return confirm(\"Вы уверены?\");" }))
                                 {
@@ -37,7 +41,7 @@
                             <div class="clearfix"></div>
                         </div>
                     </div>
-                    <div id="collapse@(i)" class="panel-collapse collapse @(i == 1 ? "in" : "")">
+                    <div id="collapse@(i)" class="panel-collapse collapse">
                         <div class="panel-body">
                             <h5><b>Категория:</b></h5>
                             <p>@item.Category</p>

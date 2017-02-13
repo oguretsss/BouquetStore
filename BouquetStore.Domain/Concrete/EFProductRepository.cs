@@ -29,6 +29,7 @@ namespace BouquetStore.Domain.Concrete
                     dbEntry.Description = product.Description;
                     dbEntry.Price = product.Price;
                     dbEntry.Category = product.Category;
+                    dbEntry.IsSeasonPromo = product.IsSeasonPromo;
                     if (product.ImageData != null)
                     {
                         dbEntry.ImageData = product.ImageData;
