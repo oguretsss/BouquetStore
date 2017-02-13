@@ -13,11 +13,11 @@
 
             @foreach (var item in Model)
             {
-                <div class="panel panel-default">
+                <div class="panel panel-default rel-position">
+                <img class="img-thumbnail hidden show-on-hover" src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" />
                     <div class="panel-heading">
                         <div class="panel-title">
                             <div class="pull-left">
-                                <b>@item.ProductID </b>
                                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse@(++i)">
                                     @item.Name
                                 </a>
@@ -39,7 +39,13 @@
                     </div>
                     <div id="collapse@(i)" class="panel-collapse collapse @(i == 1 ? "in" : "")">
                         <div class="panel-body">
+                            <h5><b>Категория:</b></h5>
+                            <p>@item.Category</p>
+                            <hr />
+                            <h5><b>Описание:</b></h5>
                             <p>@item.Description</p>
+                            <hr />
+                            <h5><b>Изображение:</b></h5>
                             <img class="img-responsive" src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" />
                         </div>
                     </div>
@@ -49,6 +55,6 @@
     </div>
     <div class="col-md-2">
             @Html.ActionLink("Добавить букет", "Create", null,
-                            new { @class = "btn btn-default" })
+                            new { @class = "btn btn-success" })
     </div>
 </div>

@@ -1,3 +1,19 @@
 ﻿.btn-product-header {
     padding-top: 0;
 }
+
+.rel-position{
+    position: relative;
+}
+
+.rel-position:hover>.show-on-hover{
+    display:block!important;
+    border-radius: 50%;
+}
+.show-on-hover{
+    position: absolute;
+    left: -15em;
+    width: 200px;
+    z-index: 10;
+}
+
