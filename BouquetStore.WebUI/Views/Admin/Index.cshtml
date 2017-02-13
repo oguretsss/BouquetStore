@@ -24,7 +24,7 @@
                             </div>
                             @if (item.IsSeasonPromo)
                             {
-                                <div class="label label-danger pull-left top">СЕЗОННОЕ</div>
+                                <div class="label label-danger">СЕЗОННОЕ</div>
                             }
                             <div class="pull-right">
                                 @using (Html.BeginForm("Delete", "Admin", FormMethod.Post, new { onsubmit="return confirm(\"Вы уверены?\");" }))
