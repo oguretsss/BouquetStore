@@ -13,6 +13,15 @@ namespace BouquetStore.WebUI
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            routes.MapRoute(null,
+                url: "{category}",
+                defaults: new { controller = "Product", action = "List" }
+            );
+
+            routes.MapRoute(null,
+                url: "{controller}/{action}/{category}",
+                defaults: new { controller = "Product", action = "List" }
+            );
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
