@@ -1,0 +1,22 @@
+﻿@model IEnumerable<string>
+
+@Html.ActionLink("Все категории", 
+    (string)ViewBag.actionName, 
+    (string)ViewBag.controllerName,
+    null,
+    new
+    {
+        @class = "btn btn-block btn-default btn-md"
+    })
+@foreach (var link in Model)
+{
+    @Html.RouteLink(link, new
+    {
+        controller = ViewBag.controllerName,
+        action = ViewBag.actionName,
+        category = link
+    }, new
+    {
+    @class = "btn btn-block btn-default btn-md"
+    })
+}

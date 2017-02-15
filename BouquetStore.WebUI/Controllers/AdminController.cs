@@ -1,5 +1,6 @@
 ﻿using BouquetStore.Domain.Abstract;
 using BouquetStore.Domain.Entities;
+using BouquetStore.WebUI.Models;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -14,9 +15,16 @@ namespace BouquetStore.WebUI.Controllers
             repository = repo;
         }
         // GET: Admin
-        public ActionResult Index()
+        public ActionResult Index(string category)
         {
-            return View(repository.Products);
+            ProductsListViewModel model = new ProductsListViewModel
+            {
+                Products = repository.Products.Where(
+                    p => category == null || p.Category == category)
+                    .OrderBy(p => p.ProductID),
+                CurrentCategory = category
+            };
+            return View(model);
         }
 
         public ViewResult Edit(int productID)

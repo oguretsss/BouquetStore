@@ -1,5 +1,5 @@
-﻿@using BouquetStore.Domain.Entities
-@model IEnumerable<Product>
+﻿@using BouquetStore.WebUI.Models
+@model ProductsListViewModel
 
 @{
     ViewBag.Title = "List";
@@ -9,7 +9,7 @@
 
 <table class="table table-striped">
     <tr><th>Product</th><th>Description</th><th>Price</th></tr>
-    @foreach (var item in Model)
+    @foreach (var item in Model.Products)
     {
         <tr>
             <td>@item.Name</td>

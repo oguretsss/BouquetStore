@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BouquetStore.Domain.Entities.Product>
+﻿@using BouquetStore.WebUI.Models
+@model ProductsListViewModel
 
 @{
     ViewBag.Title = "Редактировать продукты";
@@ -6,12 +7,14 @@
     int i = 0;
 }
 <div class="container">
-    <div class="col-md-2"></div>
+    <div class="col-md-2">
+        @Html.Action("ProductCategories", "Nav", new { caller = "Admin", actionName = "Index" })
+    </div>
     <div class="col-md-8">
         <h2>Все букеты</h2>
         <div class="panel-group" id="accordion">
 
-            @foreach (var item in Model)
+            @foreach (var item in Model.Products)
             {
                 <div class="panel panel-default rel-position custom-panel">
                 <img class="img-thumbnail hidden show-on-hover" src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" />
