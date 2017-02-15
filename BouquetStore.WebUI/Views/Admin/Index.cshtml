@@ -13,7 +13,7 @@
 
             @foreach (var item in Model)
             {
-                <div class="panel panel-default rel-position">
+                <div class="panel panel-default rel-position custom-panel">
                 <img class="img-thumbnail hidden show-on-hover" src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" />
                     <div class="panel-heading">
                         <div class="panel-title">
@@ -24,7 +24,7 @@
                             </div>
                             @if (item.IsSeasonPromo)
                             {
-                                <div class="label label-danger">СЕЗОННОЕ</div>
+                                <span class="label label-danger">СЕЗОННОЕ</span>
                             }
                             <div class="pull-right">
                                 @using (Html.BeginForm("Delete", "Admin", FormMethod.Post, new { onsubmit="return confirm(\"Вы уверены?\");" }))
@@ -59,6 +59,6 @@
     </div>
     <div class="col-md-2">
             @Html.ActionLink("Добавить букет", "Create", null,
-                            new { @class = "btn btn-success" })
+                            new { @class = "btn btn-success custom-btn" })
     </div>
 </div>

@@ -12,8 +12,30 @@
 }
 .show-on-hover{
     position: absolute;
-    left: -15em;
-    width: 200px;
+    left: -12em;
+    width: 150px;
     z-index: 10;
+}
+
+.panel-group .custom-panel{
+    background-color:#d2d2d2;
+    border:none;
+    border-radius:0;
+    box-shadow:none;
+}
+
+.panel-default>.panel-heading{
+    background-color: #a0a0a0;
+    border:none;
+    border-radius:0;
+}
+
+.panel-default>.panel-heading a{
+    text-decoration: none;
+    color:white;
+}
+
+.custom-btn{
+    border-radius: 0;
 }
 
