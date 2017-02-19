@@ -9,47 +9,48 @@
 	<link href="css/style.css" rel="stylesheet">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
     <style>
-       
+
     </style>
 </head>
 <body>
 
-<div class="container">	
-	<div class="row" style="height: 40px;"></div>  
-	  <!-- NAVBAR -->    
-	    <div class="row" >
-	    	<div class="col-md-2">
-	    	<p class="hidden-sm hidden-xs"><img src="img/logo2.png" style="margin-top: -30px;" alt="logo"></p>
-	    	</div>
-	    		<div class="col-md-8"  >
-	    		<!-- Если убрать класс navbar-default, то рамка вокруг меню пропадает -->
-				    <nav class="navbar navbar-default" role="navigation">				    
-							<!-- site name and mobile button -->
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-									<span class="sr-only">Toggle navigation</span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-									<span class="icon-bar"></span>
-								</button>
-								<a class="navbar-brand" href="#">Fruit is goood</a> 
-							</div>
-							<!-- THIS IS ~SPARTA~ MENU -->
-							<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-								<ul class="nav navbar-nav">
-								<!-- Надо протестить, когда с ЛОГО разберусь -->				
-									<li><a href="#">Main page</a></li>
-									<li><a href="#">Gallery</a></li>
-									<li><a href="#">Exclusive</a></li>
-									<li><a href="#">About us</a></li>
-								</ul>
-							</div> 
-					</nav>
-				</div>
-			<div class="col-md-2"></div>
+<div class="container-fluid">
+	<div class="row" style="height: 40px;"></div>
+	  <!-- NAVBAR -->
+  <div class="row" >
+  	<div class="col-md-2">
+  		<div class="hidden-sm hidden-xs"><img src="img/logo2.png" style="margin-top: -30px;" alt="logo"></div>
+  	</div>
+  	<div class="col-md-8"  >
+  		<!-- Если убрать класс navbar-default, то рамка вокруг меню пропадает -->
+		    <nav class="navbar navbar-default" role="navigation">
+					<!-- site name and mobile button -->
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Fruit is goood</a>
+					</div>
+					<!-- THIS IS ~SPARTA~ MENU -->
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav">
+						<!-- Надо протестить, когда с ЛОГО разберусь -->
+							<li><a href="#">Main page</a></li>
+							<li><a href="#">Gallery</a></li>
+							<li><a href="#">Exclusive</a></li>
+							<li><a href="#">About us</a></li>
+						</ul>
+					</div>
+			</nav>
 		</div>
-	
-	<hr>
+		<div class="col-md-2"></div>
+	</div>
+</div>
+
+<div>
 	<!-- making up carousel -->
 	<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 			<!-- Indicators -->
@@ -57,7 +58,7 @@
 				<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
 				<li data-target="#carousel-example-generic" data-slide-to="1"></li>
 				<li data-target="#carousel-example-generic" data-slide-to="2"></li>
-			</ol>		
+			</ol>
 		<!-- Slider content -->
 		<div class="carousel-inner">
 	  		<div class="item active">
@@ -88,140 +89,138 @@
 				<span class="glyphicon glyphicon-chevron-right"></span>
 			</a>
 	    </div>
-    </div>  
-	<!-- Season purposals -->	
-	    <div class="text-center">
-		    <!-- <p class="sale"> SALE SALE SALE</p> -->
-		    <h3>SALE SALE SALE</h3>
-	    </div>   		
-			<div class="row">
-	            <div class="col-md-2"></div>
-	            <div class="col-md-8 ">	           
-	                <div class="row">
-	                    <div class="col-md-8 panel">                  
-                            <img src="img/520x300.jpg" class="img hidden-sm hidden-xs" height="300" width="510" alt="firstimage">
+    </div>
+</div>
+<div class="container">
+	<!-- Season purposals -->
+  <!-- <p class="sale"> SALE SALE SALE</p> -->
+  <h3 class="text-center">SALE SALE SALE</h3>
+	<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-8 ">
+        <div class="row">
+            <div class="col-md-8 panel">
+                  <img src="img/520x300.jpg" class="img hidden-sm hidden-xs" height="300" width="510" alt="firstimage">
 
-                            <img src="img/400x300.jpg" class="img-responsive hidden-md hidden-lg center-block" alt="firstimage">                        
-                        	<h5 class="hidden-sm hidden-xs">ТОРФИК УЕБОК В ШЛЯПНОЙ КОРОБКЕ!</h5>
+                  <img src="img/400x300.jpg" class="img-responsive hidden-md hidden-lg center-block" alt="firstimage">
+              	<h5 class="hidden-sm hidden-xs">ТОРФИК УЕБОК В ШЛЯПНОЙ КОРОБКЕ!</h5>
 
-                        	<h5 class="text-center hidden-md hidden-lg"> ТОРФИК УЕБОК В ШЛЯПНОЙ КОРОБКЕ!</h5>
-	                    </div>
-	                    <div class="col-md-4 panel">                
-                            <img src="img/260x300.jpg" class="img hidden-sm hidden-xs" height="300" width="250" alt="firstimage">
-                        	<h5 class="hidden-sm hidden-xs">ТОРФИК В КОКОСОВЫХ</h5> 
+              	<h5 class="text-center hidden-md hidden-lg"> ТОРФИК УЕБОК В ШЛЯПНОЙ КОРОБКЕ!</h5>
+            </div>
+            <div class="col-md-4 panel">
+                  <img src="img/260x300.jpg" class="img hidden-sm hidden-xs" height="300" width="250" alt="firstimage">
+              	<h5 class="hidden-sm hidden-xs">ТОРФИК В КОКОСОВЫХ</h5>
 
-                        	<img src="img/400x300.jpg" class="img-responsive hidden-md hidden-lg center-block" alt="firstimage"> 
-                        	<h5 class="text-center hidden-md hidden-lg">ТОРФИК В КОКОСОВЫХ</h5>      
-	                    </div>	                    
-	                </div>
-	            </div>
-	        <div class="col-md-2"></div>
-		    </div>   
-		
-			<div class="row">
-	            <div class="col-md-2"></div>
-	            <div class="col-md-8 ">
-	                 <div class="row">
-	                 	<div class="col-md-4 panel">    
-	                 	 <img src="img/260x300.jpg" class="img hidden-sm hidden-xs" height="300" width="250" alt="firstimage">          
-                       		<h5 class="hidden-sm hidden-xs">ТОРФИК В КОКОСОВЫХ СТРИНГАХ</h5>  
+              	<img src="img/400x300.jpg" class="img-responsive hidden-md hidden-lg center-block" alt="firstimage">
+              	<h5 class="text-center hidden-md hidden-lg">ТОРФИК В КОКОСОВЫХ</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+	<div class="row">
+	  <div class="col-md-2"></div>
+	  <div class="col-md-8 ">
+	    <div class="row">
+	     	<div class="col-md-4 panel">
+		     	<img src="img/260x300.jpg" class="img hidden-sm hidden-xs" height="300" width="250" alt="firstimage">
+		      <h5 class="hidden-sm hidden-xs">ТОРФИК В КОКОСОВЫХ СТРИНГАХ</h5>
+		      <img src="img/400x300.jpg" class="img-responsive hidden-md hidden-lg center-block" alt="firstimage">
+		      <h5 class="text-center hidden-md hidden-lg">ТОРФИК В КОКОСОВЫХ СТРИНГАХ</h5>
+	      </div>
+        <div class="col-md-8 panel">
+	        <img src="img/520x300.jpg" class="img hidden-sm hidden-xs" height="300" width="510" alt="firstimage">
+	        <h5 class="hidden-sm hidden-xs">ТОРФИК УЕБОК В ШЛЯПНОЙ КОРОБКЕ!</h5>
+	        <img src="img/400x300.jpg" class="img-responsive hidden-md hidden-lg center-block" alt="firstimage">
+	        <h5 class="text-center hidden-md hidden-lg">ТОРФИК УЕБОК В ШЛЯПНОЙ КОРОБКЕ!</h5>
+        </div>
+	    </div>
+	  </div>
+    <div class="col-md-2"></div>
+  </div>
 
-                       		<img src="img/400x300.jpg" class="img-responsive hidden-md hidden-lg center-block" alt="firstimage"> 
-                       		<h5 class="text-center hidden-md hidden-lg">ТОРФИК В КОКОСОВЫХ СТРИНГАХ</h5>       
-	                    </div>
-	                    <div class="col-md-8 panel">
-	                         <img src="img/520x300.jpg" class="img hidden-sm hidden-xs" height="300" width="510" alt="firstimage">
-	                         <h5 class="hidden-sm hidden-xs">ТОРФИК УЕБОК В ШЛЯПНОЙ КОРОБКЕ!</h5>
-
-
-	                         <img src="img/400x300.jpg" class="img-responsive hidden-md hidden-lg center-block" alt="firstimage"> 
-	                         <h5 class="text-center hidden-md hidden-lg">ТОРФИК УЕБОК В ШЛЯПНОЙ КОРОБКЕ!</h5>
-	                    </div>	               
-	                </div>
-	            </div>
-		    	<div class="col-md-2"></div>
-		    </div>
-		
 	<!-- INsta-Rasta -->
-        <div class="row text-center">
+  <div class="row text-center">
 			<div class="col-lg-2"></div>
             <div class="col-lg-8">
-                <h3>Follow us in Instagram</h3>
+                <h3>Follow us on Instagram</h3>
             </div>
             <div class="col-lg-2"></div>
+	</div>
+	<div class="row">
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8">
+			<div class="row">
+    		<div class="col-md-4 thumb">
+        		<a href="#">
+              	<img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
+          	</a>
+    		</div>
+        <div class="col-md-4 thumb">
+            <a href="#">
+                <img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 thumb">
+            <a href="#">
+                <img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
+            </a>
+        </div>
+	    </div>
 		</div>
-		<div class="row">
-			<div class="col-lg-2"></div>
-			<div class="col-lg-8">
-				<div class="row">
-            		<div class="col-md-4 thumb">
-                		<a class="thumbnail" href="#">
-	                    	<img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
-	                	</a>
-            		</div>
-		            <div class="col-md-4 thumb">
-		                <a class="thumbnail" href="#">
-		                    <img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
-		                </a>
-		            </div>
-		            <div class="col-md-4 thumb">
-		                <a class="thumbnail" href="#">
-		                    <img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
-		                </a>
-		            </div>
-		        </div>
-			<div class="col-lg-2"></div>
-			</div>
+		<div class="col-lg-2"></div>
+	</div>
+	<div class="row">
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8">
+			<div class="row">
+    		<div class="col-md-4 thumb">
+        		<a href="#">
+              	<img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
+          	</a>
+    		</div>
+        <div class="col-md-4 thumb">
+            <a href="#">
+                <img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
+            </a>
+        </div>
+        <div class="col-md-4 thumb">
+            <a href="#">
+                <img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
+            </a>
+        </div>
+	  	</div>
 		</div>
-		<div class="row">
-			<div class="col-lg-2"></div>
-			<div class="col-lg-8">
-				<div class="row">
-            		<div class="col-md-4 thumb">
-                		<a class="thumbnail" href="#">
-	                    	<img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
-	                	</a>
-            		</div>
-		            <div class="col-md-4 thumb">
-		                <a class="thumbnail" href="#">
-		                    <img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
-		                </a>
-		            </div>
-		            <div class="col-md-4 thumb">
-		                <a class="thumbnail" href="#">
-		                    <img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
-		                </a>
-		            </div>
-		        </div>
-			<div class="col-lg-2"></div>
-			</div>
-		</div>
-		<div class="row">
-			<div class="col-lg-2"></div>
-			<div class="col-lg-8">
-				<div class="row">
-            		<div class="col-md-4 thumb">
-                		<a class="thumbnail" href="#">
-	                    	<img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
-	                	</a>
-            		</div>
-		            <div class="col-md-4 thumb">
-		                <a class="thumbnail" href="#">
-		                    <img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
-		                </a>
-		            </div>
-		            <div class="col-md-4 thumb">
-		                <a class="thumbnail" href="#">
-		                    <img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
-		                </a>
-		            </div>
-		        </div>
-		    </div>
-			<div class="col-lg-2"></div>			
-		</div>
-        <!-- Footer -->
-        <footer>
-            <div class="row">
+		<div class="col-lg-2"></div>
+	</div>
+	<div class="row">
+		<div class="col-lg-2"></div>
+		<div class="col-lg-8">
+			<div class="row">
+          		<div class="col-md-4 thumb">
+              		<a href="#">
+                    	<img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
+                	</a>
+          		</div>
+	            <div class="col-md-4 thumb">
+	                <a href="#">
+	                    <img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
+	                </a>
+	            </div>
+	            <div class="col-md-4 thumb">
+	                <a href="#">
+	                    <img class="img-thumbnail center-block" src="http://placehold.it/300x300" width="300" height="300" alt="">
+	                </a>
+	            </div>
+	    </div>
+	  </div>
+		<div class="col-lg-2"></div>
+	</div>
+</div>
+    <!-- Footer -->
+    <footer>
+			<div class="container-fluid">
+      <div class="row">
 				<div class="col-lg-2"></div>
 					<div class="col-lg-8">
 						<hr>
@@ -234,13 +233,14 @@
                     		</div>
                     	</div>
                     </div>
-                <div class="col-lg-2"></div>            	
+                <div class="col-lg-2"></div>
             </div>
-        </footer>
-	    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-	    <!-- Include all compiled plugins (below), or include individual files as needed -->
-	    <script src="js/bootstrap.min.js"></script>	
-	    </div>	
+					</div>
+      </footer>
+		</div>
+	  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	  <!-- Include all compiled plugins (below), or include individual files as needed -->
+	  <script src="js/bootstrap.min.js"></script>
 	</body>
 </html>
