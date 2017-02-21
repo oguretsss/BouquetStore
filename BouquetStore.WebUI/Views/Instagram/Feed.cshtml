@@ -1,0 +1,19 @@
+﻿@model List<string>
+
+<div class="row text-center">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h3>Мы в Инстаграме</h3>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+<div class="row">
+    @foreach (var pic in Model)
+            {
+        <div class="col-md-4 thumb">
+            <a href="#">
+                <div class="warp"><img class="img-thumbnail center-block" src="@pic" width="300" height="300" alt=""></div>
+            </a>
+        </div>
+    }
+</div>
