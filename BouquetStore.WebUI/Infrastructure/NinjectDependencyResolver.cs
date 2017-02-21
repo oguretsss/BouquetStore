@@ -6,6 +6,8 @@ using BouquetStore.Domain.Abstract;
 using BouquetStore.Domain.Entities;
 using BouquetStore.Domain.Concrete;
 using Moq;
+using BouquetStore.WebUI.Abstract;
+using BouquetStore.WebUI.Concrete;
 
 namespace BouquetStore.WebUI.Infrastructure
 {
@@ -35,6 +37,7 @@ namespace BouquetStore.WebUI.Infrastructure
         {
             //Add bindings here
             kernel.Bind<IProductRepository>().To<EFProductRepository>();
+            kernel.Bind<IInstagramFeed>().To<MyInstagramFeed>();
         }
     }
 }
