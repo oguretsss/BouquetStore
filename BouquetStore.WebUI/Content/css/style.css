@@ -36,3 +36,15 @@ h3 {
 	 margin-top: 0em;
 	/* margin-bottom: 0em;*/
 }
+
+.thumb .img-thumbnail{
+  transition: all .5s ease-in-out;
+}
+.warp{
+  padding:0;
+  overflow: hidden;
+}
+.thumb:hover .img-thumbnail{
+  transform-origin: center;
+  transform:scale(1.4);
+}
