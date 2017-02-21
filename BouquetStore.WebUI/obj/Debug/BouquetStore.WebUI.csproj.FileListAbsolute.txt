@@ -61,3 +61,5 @@ D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\bin\EntityFramework.dl
 D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\bin\EntityFramework.SqlServer.dll
 D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\bin\EntityFramework.xml
 D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\bin\EntityFramework.SqlServer.xml
+D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\bin\Newtonsoft.Json.dll
+D:\Visual Studio Projects\BouquetStore\BouquetStore.WebUI\bin\Newtonsoft.Json.xml

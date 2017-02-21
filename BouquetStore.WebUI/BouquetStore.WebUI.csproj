@@ -92,6 +92,10 @@
       <HintPath>..\packages\Moq.4.5.30\lib\net45\Moq.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
       <Private>True</Private>
@@ -179,9 +183,12 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IInstagramFeed.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Concrete\MyInstagramFeed.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\InstagramController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
@@ -210,6 +217,8 @@
     <Content Include="Views\Admin\Edit.cshtml" />
     <Content Include="Views\Order\Index.cshtml" />
     <Content Include="Views\Nav\ProductCategories.cshtml" />
+    <Content Include="Views\Admin\InstaFeed.cshtml" />
+    <Content Include="Views\Instagram\Feed.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
