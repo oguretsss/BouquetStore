@@ -12,7 +12,6 @@ namespace BouquetStore.WebUI.Controllers
     public class ProductController : Controller
     {
         private IProductRepository repository;
-        private byte[] image;
         public ProductController(IProductRepository repo)
         {
             repository = repo;
@@ -20,7 +19,7 @@ namespace BouquetStore.WebUI.Controllers
 
         public ViewResult List(string category)
         {
-            ProductsListViewModel model = new ProductsListViewModel
+            ProductsListViewModel<Product> model = new ProductsListViewModel<Product>
             {
                 Products = repository.Products.Where(
                     p => category == null || p.Category == category)

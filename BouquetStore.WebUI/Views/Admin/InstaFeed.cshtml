@@ -1,0 +1,13 @@
+﻿@model List<string>
+@{
+    ViewBag.Title = "InstaFeed";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>InstaFeed</h2>
+<div class="container">
+    @foreach (var item in Model)
+    {
+        <img class="img-thumbnail" src="@item.ToString()" width="200" />
+    }
+</div>

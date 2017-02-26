@@ -1,24 +1,25 @@
 ﻿@using BouquetStore.WebUI.Models
 @using BouquetStore.Domain.Entities
-@model ProductsListViewModel<Product>
+@model ProductsListViewModel<SeasonPromoProduct>
 
 @{
-    ViewBag.Title = "Редактировать продукты";
+    ViewBag.Title = "PromoProducts";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
     int i = 0;
 }
+
 <div class="container">
     <div class="col-md-2">
-        @Html.Action("ProductCategories", "Nav", new { caller = "Admin", actionName = "Index" })
+        <h1 class="label label-info">Promo</h1>
     </div>
     <div class="col-md-8">
-        <h2>Все букеты</h2>
+        <h2>Все промо-букеты</h2>
         <div class="panel-group" id="accordion">
 
             @foreach (var item in Model.Products)
             {
                 <div class="panel panel-default rel-position custom-panel">
-                <img class="img-thumbnail hidden show-on-hover" src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" />
+                    <img class="img-thumbnail hidden show-on-hover not-round" src="@Url.Action("GetImage", "Promo", new { productId = item.ProductID })" />
                     <div class="panel-heading">
                         <div class="panel-title">
                             <div class="pull-left">
@@ -27,7 +28,7 @@
                                 </a>
                             </div>
                             <div class="pull-right">
-                                @using (Html.BeginForm("Delete", "Admin", FormMethod.Post, new { onsubmit="return confirm(\"Вы уверены?\");" }))
+                                @using (Html.BeginForm("DeletePromo", "Admin", FormMethod.Post, new { onsubmit = "return confirm(\"Вы уверены?\");" }))
                                 {
                                     @Html.Hidden("productID", item.ProductID)
                                     <label for="submit-delete+@item.ProductID.ToString()" class="btn btn-product-header"><span class="glyphicon glyphicon-remove"></span></label>
@@ -36,7 +37,7 @@
                                            value="Удалить" />
                                 }
                             </div>
-                            <div class="pull-right"><a href="@Url.Action("Edit", "Admin", new { item.ProductID })" class="btn btn-product-header"><span class="glyphicon glyphicon-edit"></span></a></div>
+                            <div class="pull-right"><a href="@Url.Action("EditPromo", "Admin", new { item.ProductID })" class="btn btn-product-header"><span class="glyphicon glyphicon-edit"></span></a></div>
                             <div class="pull-right"><b>Цена: </b>@item.Price.ToString("c")</div>
                             <div class="clearfix"></div>
                         </div>
@@ -50,7 +51,9 @@
                             <p>@item.Description</p>
                             <hr />
                             <h5><b>Изображение:</b></h5>
-                            <img class="img-responsive" src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" />
+                            <img class="img-responsive" src="@Url.Action("GetImage", "Promo", new { productId = item.ProductID })" />
+                            <h5><b>Изображение для мобильного вида:</b></h5>
+                            <img class="img-responsive" src="@Url.Action("GetImage", "Promo", new { productId = item.ProductID, imageType = "Secondary" })" />
                         </div>
                     </div>
                 </div>
@@ -58,7 +61,8 @@
         </div>
     </div>
     <div class="col-md-2">
-            @Html.ActionLink("Добавить букет", "Create", null,
+        @Html.ActionLink("Добавить промо букет", "Create", new { productType = "SeasonPromo" },
                             new { @class = "btn btn-success custom-btn" })
     </div>
 </div>
+

@@ -3,9 +3,9 @@ using BouquetStore.Domain.Entities;
 
 namespace BouquetStore.WebUI.Models
 {
-    public class ProductsListViewModel
+    public class ProductsListViewModel<T>
     {
-        public IEnumerable<Product> Products { get; set; }
+        public IEnumerable<T> Products { get; set; }
         public string CurrentCategory { get; set; }
     }
 }

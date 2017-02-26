@@ -188,10 +188,12 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Concrete\MyInstagramFeed.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstagramController.cs" />
     <Compile Include="Controllers\NavController.cs" />
     <Compile Include="Controllers\OrderController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\PromoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -219,6 +221,9 @@
     <Content Include="Views\Nav\ProductCategories.cshtml" />
     <Content Include="Views\Admin\InstaFeed.cshtml" />
     <Content Include="Views\Instagram\Feed.cshtml" />
+    <Content Include="Views\Admin\EditPromo.cshtml" />
+    <Content Include="Views\Admin\PromoProducts.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -230,6 +235,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\images\sliderimage\" />
     <Folder Include="HtmlHelpers\" />
+    <Folder Include="Views\Promo\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BouquetStore.Domain\BouquetStore.Domain.csproj">

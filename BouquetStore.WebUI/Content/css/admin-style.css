@@ -24,6 +24,10 @@
     box-shadow:none;
 }
 
+.rel-position:hover>.not-round{
+    border-radius:0;
+}
+
 .panel-default>.panel-heading{
     background-color: #a0a0a0;
     border:none;
