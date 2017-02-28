@@ -13,6 +13,7 @@
         <div class="panel-body">
             <p class="label label-primary">Не забудь, о том, что у промо-продуктов должны быть особые размеры!</p>
             @Html.HiddenFor(m => m.ProductID)
+            @Html.EditorFor(m => m.ImageNumberInGrid)
             @foreach (var property in ViewData.ModelMetadata.Properties)
             {
                 switch (property.PropertyName)
@@ -22,6 +23,7 @@
                     case "ImageMimeType":
                     case "ImageDataSecondary":
                     case "ImageMimeTypeSecondary":
+                    case "ImageNumberInGrid":
                         // do nothing
                         break;
                     default:
@@ -91,10 +93,10 @@
 
         <div class="panel-footer">
             <input type="submit" value="Save" class="btn btn-primary" />
-            @Html.ActionLink("Cancel and return to List", "Index", null, new
-       {
-           @class = "btn btn-default"
-       })
+            @Html.ActionLink("Cancel and return to List", "PromoProducts", null, new
+                               {
+                                   @class = "btn btn-default"
+                               })
         </div>
     }
 </div>

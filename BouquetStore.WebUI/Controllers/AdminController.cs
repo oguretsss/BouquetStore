@@ -37,7 +37,7 @@ namespace BouquetStore.WebUI.Controllers
             {
                 Products = repository.PromoProducts.Where(
                     p => category == null || p.Category == category)
-                    .OrderBy(p => p.ProductID),
+                    .OrderBy(p => p.ImageNumberInGrid),
                 CurrentCategory = category
             };
             return View(model);
@@ -98,7 +98,7 @@ namespace BouquetStore.WebUI.Controllers
             {
                 repository.SavePromoProduct(product);
                 TempData["message"] = string.Format("Промо продукт \"{0}\" успешно сохранен", product.Name);
-                return RedirectToAction("Index");
+                return RedirectToAction("PromoProducts");
             }
             else
             {
@@ -142,7 +142,7 @@ namespace BouquetStore.WebUI.Controllers
                 TempData["message"] = string.Format("Промо продукт \"{0}\" успешно удален",
                 deletedProduct.Name);
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("PromoProducts");
         }
 
         public ViewResult InstaFeed()

@@ -17,16 +17,14 @@ namespace BouquetStore.WebUI.Controllers
             repository = repo;
         }
 
-        public PartialViewResult PromoGrid(string category)
+        public PartialViewResult PromoGrid()
         {
-            ProductsListViewModel<SeasonPromoProduct> model = new ProductsListViewModel<SeasonPromoProduct>
-            {
-                Products = repository.PromoProducts.Where(
-                    p => category == null || p.Category == category)
-                    .OrderBy(p => p.ProductID).Take(4),
-                CurrentCategory = category
-            };
-            return PartialView(model);
+            SeasonPromoProduct[] Products = repository.PromoProducts
+                .OrderBy(p => p.ImageNumberInGrid)
+                .Take(4)
+                .ToArray();
+
+            return PartialView(Products);
         }
 
         public FileResult GetImage(int productId, string imageType = "Primary")

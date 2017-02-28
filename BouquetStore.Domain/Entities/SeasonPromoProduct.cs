@@ -10,5 +10,7 @@ namespace BouquetStore.Domain.Entities
         public byte[] ImageDataSecondary { get; set; }
         [HiddenInput(DisplayValue = false)]
         public string ImageMimeTypeSecondary { get; set; }
+        [DisplayName("Порядковый номер для сортировки")]
+        public int ImageNumberInGrid { get; set; }
     }
 }

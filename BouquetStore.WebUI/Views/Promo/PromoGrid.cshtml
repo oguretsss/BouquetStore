@@ -1,0 +1,30 @@
+﻿@model BouquetStore.Domain.Entities.SeasonPromoProduct[]
+
+<div class="row">
+    <div class="col-md-8">
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Primary" })" class="img-responsive hidden-sm hidden-xs" alt="firstimage">
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="firstimage">
+        <h5 class="hidden-sm hidden-xs">@(Model[0].Name)</h5>
+        <h5 class="text-center hidden-md hidden-lg">@(Model[0].Name)</h5>
+    </div>
+    <div class="col-md-4">
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[1].ProductID, imageType = "Primary" })" class="img-responsive hidden-sm hidden-xs" alt="firstimage">
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[1].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="firstimage">
+        <h5 class="hidden-sm hidden-xs">@(Model[1].Name)</h5>
+        <h5 class="text-center hidden-md hidden-lg">@(Model[1].Name)</h5>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[2].ProductID, imageType = "Primary" })" class="img-responsive hidden-sm hidden-xs" alt="firstimage">
+        <h5 class="hidden-sm hidden-xs">@(Model[2].Name)</h5>
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[2].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="firstimage">
+        <h5 class="text-center hidden-md hidden-lg">@(Model[2].Name)</h5>
+    </div>
+    <div class="col-md-8">
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[3].ProductID, imageType = "Primary" })" class="img-responsive hidden-sm hidden-xs" alt="firstimage">
+        <h5 class="hidden-sm hidden-xs">@(Model[3].Name)</h5>
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[3].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="firstimage">
+        <h5 class="text-center hidden-md hidden-lg">@(Model[3].Name)</h5>
+    </div>
+</div>
