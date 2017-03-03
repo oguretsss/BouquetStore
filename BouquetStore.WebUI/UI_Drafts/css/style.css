@@ -46,15 +46,60 @@ h3 {
 }
 
 
-.test1 {
-  /*  content: "";
+/*.test1 {
+  сontent: 3;
     position: absolute;
     height: 100%;
-    width: 20px;*/
-/*    top: 0px;*/
-    background-image: url("../img/circle20x20.png");
-/*    background-size: 20px 20px;*/
-    background-position: 21px 21px;
+    width: 20px;
+    top: 0px;
+    background-image: url("../img/circle17x17.png");
+    background-size: 20px 20px;
+    background-position: 23px 19px;
+    background-position: 24px 15px;
     background-repeat: no-repeat;
 }
+*/
 
+.circle {
+	width: 15px;
+  	height: 15px;
+  	border-radius: 40%;
+  	border-color: #C41E3A;
+  	font-size: 10px;
+  	color: #fff;
+  	line-height: 15px;
+  	text-align: center;
+  	background: #C41E3A;
+
+}
+#wrap {
+  width: 80%;
+  background: #fff;
+  position: relative;
+}
+.innersm {
+  position: relative;
+  z-index: 2;
+  left: 9px; 
+  top: -23px;
+}
+
+.inner {
+  position: relative;
+  z-index: 2;
+  left: 78px; 
+  top: -23px;
+}
+
+#wrap:after {
+  content: "\f291"; 
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-decoration: inherit;
+  position: absolute;
+  font-size: 400px;
+  color: lightblue;
+  z-index: 1;
+  
+}
