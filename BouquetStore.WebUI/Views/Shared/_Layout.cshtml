@@ -2,6 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="~/Content/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="~/UI_Drafts/css/font-awesome.min.css">
@@ -11,53 +12,17 @@
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <!-- making up carousel -->
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-        </ol>
-
-        <!-- Slider content -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="~/Content/images/sliderimage/1.jpg" class="center-block" alt="firstimage">
-                <div class="carousel-caption">
-                    <p>FRUIT IS GOOOD</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="~/Content/images/sliderimage/2.jpg" class="center-block" alt="secondimage">
-                <div class="carousel-caption">
-                    <p>FRUIT IS GOOOD</p>
-                </div>
-            </div>
-            <div class="item">
-                <img src="~/Content/images/sliderimage/3.jpg" class="center-block" alt="secondimage">
-                <div class="carousel-caption">
-                    <p>FRUIT IS GOOOD</p>
-                </div>
-            </div>
-        </div>
-        <!-- Control elements -->
-        <div>
-            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-            </a>
-        </div>
-    </div>
-    <!-- NAVBAR -->
     <div class="container">
+        <div class="row" style="height:40px;"></div>
+        <!-- NAVBAR -->
         <div class="row">
-            <div class="col-md-2"></div>
-            <div class="col-md-8">
+            <!-- <div class="col-lg-1 col-md-1 col-sm-1"></div> -->
+            <div class="col-lg-2 col-md-2 col-sm-2">
+                <div class="hidden-xs"><a href="#"><img src="~/Content/images/logo/logo130х130.jpg" style="margin-top: -30px; ;" alt="Fruit is good logo"></a></div>
+            </div>
+            <div class="col-lg-8 col-md-10 col-sm-10" style="margin-left:auto;margin-right:auto">
+                <!-- Если убрать класс navbar-default, то рамка вокруг меню пропадает -->
                 <nav class="navbar navbar-default" role="navigation">
-                    <!-- <div class="container-fluid"> -->
                     <!-- site name and mobile button -->
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -66,21 +31,76 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="#">FRUIT IS GOOD(could be a logo)</a>
+                        <a class="navbar-brand hidden-md hidden-sm" href="#">FRUIT IS GOOD</a>
+                        <!-- Сыыслку на сам магазин при клике на лого -->
                     </div>
                     <!-- THIS IS ~SPARTA~ MENU -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active">@Html.ActionLink("Главная", "List", "Product")</li>
-                            <li><a href="#">Gallery</a></li>
-                            <li><a href="#">Exclusive</a></li>
-                            <li>@Html.ActionLink("Доставка и оплата", "Index", "Order")</li>
+                            <!-- Надо протестить, когда с ЛОГО разберусь -->
+
+                            <li>@Html.ActionLink("Магазин", "List", "Product")</li>
+                            <li><a href="#">Галерея</a></li>
+                            <li><a href="#">О нас</a></li>
+                            <li><a href="#">Контакты</a></li>
+                            <li>@Html.ActionLink("Доставка", "Index", "Order")</li>
+                            <li>
+                                <!--<a href="#" style="display:inline-block;">
+                                    <span class="hidden-sm hidden-xs">Корзина</span>
+                                </a>-->
+                                <a href="#" class="navbar-icon-link">
+                                    <i class="fa fa-shopping-basket fa-2x icon-basket" aria-hidden="true"></i>
+                                    <div class="basket-amount hidden">1</div>
+                                </a>
+                            </li>
                         </ul>
-                    </div> <!-- /.navbar-collapse -->
-                    <!-- </div>  --><!-- /.container-fluid or container-->
+                    </div>
+
                 </nav>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-lg-2 "></div>
+        </div>
+    </div>
+    <!-- making up carousel -->
+    <div class="container">
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Slider content -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="~/Content/images/sliderimage/1.jpg" class="center-block" alt="firstimage">
+                    <div class="carousel-caption">
+                        <p>FRUIT IS GOOOD</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/Content/images/sliderimage/2.jpg" class="center-block" alt="secondimage">
+                    <div class="carousel-caption">
+                        <p>FRUIT IS GOOOD</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="~/Content/images/sliderimage/3.jpg" class="center-block" alt="secondimage">
+                    <div class="carousel-caption">
+                        <p>FRUIT IS GOOOD</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Control elements -->
+            <div>
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                </a>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -88,6 +108,26 @@
         <div class="col-md-8"> @RenderBody()</div>
         <div class="col-md-2"></div>
     </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <hr>
+                    <div class="row" style="padding-bottom: 1em;">
+                        <div class="col-lg-3">
+                            <i class="fa fa-instagram" aria-hidden="true"></i> fruit_is_goood
+                        </div>
+                        <div class="col-lg-9">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i> order@fruit_is_goood.ru
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </footer>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
