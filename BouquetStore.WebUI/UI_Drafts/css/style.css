@@ -60,46 +60,24 @@ h3 {
 }
 */
 
-.circle {
-	width: 15px;
-  	height: 15px;
-  	border-radius: 40%;
-  	border-color: #C41E3A;
-  	font-size: 10px;
-  	color: #fff;
-  	line-height: 15px;
-  	text-align: center;
-  	background: #C41E3A;
-
-}
-#wrap {
-  width: 80%;
-  background: #fff;
-  position: relative;
-}
-.innersm {
-  position: relative;
-  z-index: 2;
-  left: 9px; 
-  top: -23px;
+.lbl-basket{
+    /*display:inline;*/
 }
 
-.inner {
-  position: relative;
-  z-index: 2;
-  left: 78px; 
-  top: -23px;
+.navbar-nav>li>a.navbar-icon-link{
+    display:inline-block;
+    padding:0;
+    position:relative;
 }
 
-#wrap:after {
-  content: "\f291"; 
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  text-decoration: inherit;
-  position: absolute;
-  font-size: 400px;
-  color: lightblue;
-  z-index: 1;
-  
+.basket-amount{
+    position: absolute;
+    color: white;
+    font-weight: bold;
+    background-color: #ff002b;
+    top: 5px;
+    left: 6px;
+    width: 20px;
+    text-align: center;
+    border-radius: 50%;
 }
