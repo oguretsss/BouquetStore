@@ -19,7 +19,11 @@ h3 {
 }
 
 .navbar-default .navbar-nav>li>a  {
- 	color: black;
+ 	color: #000;
+ 	/*text-decoration: none;*/
+ }
+.navbar-default .navbar-nav>li>a:hover  {
+ 	color: #7e7e7e;
  	/*text-decoration: none;*/
  }
 .navbar-default {
@@ -39,22 +43,70 @@ h3 {
   transform:scale(1.4);
 }
 
-.navbar-nav>li>a.navbar-icon-link{
-    display:inline-block;
-    padding-top:10px;
-    position:relative;
-}
+
 
 .basket-amount{
     position: absolute;
     color: white;
     font-weight: bold;
     background-color: #ff002b;
-    top: 15px;
-    left: 21px;
-    width: 20px;
+    top: 50px;
+    left: 25px;
+    width: 25px;
     text-align: center;
     border-radius: 50%;
 }
+
+.fruit-header nav {
+  margin-top: 20px;
+}
+.fruit-header .navbar-brand {
+  height: 130px;
+  font-size: 1.7em;
+}
+
+.fruit-header .nav >li >a {
+  padding-top: 55px;
+  padding-bottom: 55px;
+}
+
+.fruit-header .nav>li>a.navbar-icon-link{
+    display:inline-block;
+    padding-top:37px;
+    position:relative;
+    font-size: 0.8em;
+}
+.fruit-header .navbar-toggle {
+  padding: 10px;
+  margin: 50px 15px 50px 0;
+}
+
+@media (min-width: 1200px){
+ .custom-navbar {
+    font-size: 1.7em;
+ }
+ .fruit-header .nav>li>a.navbar-icon-link{
+    padding-top:37px;
+ }
+ .basket-amount{
+    left: 25px;
+    width: 25px;
+  }
+}
+
+@media (max-width: 1200px){
+ .custom-navbar {
+    font-size: 1.4em;
+ }
+ .fruit-header .nav>li>a.navbar-icon-link{
+   padding-top:42px;
+ }
+ .basket-amount{
+   left: 23px;
+   width: 21px;
+ }
+}
+
+
 
 

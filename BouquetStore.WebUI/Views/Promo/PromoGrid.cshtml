@@ -1,5 +1,12 @@
 ﻿@model BouquetStore.Domain.Entities.SeasonPromoProduct[]
 
+<div class="row text-center">
+    <div class="col-md-2"></div>
+    <div class="col-md-8">
+        <h3>Сезонное предложение</h3>
+    </div>
+    <div class="col-md-2"></div>
+</div>
 <div class="row">
     <div class="col-md-8">
         <img src="@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Primary" })" class="img-responsive hidden-sm hidden-xs" alt="firstimage">
