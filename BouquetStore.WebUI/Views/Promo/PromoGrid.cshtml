@@ -9,29 +9,65 @@
 </div>
 <div class="row">
     <div class="col-md-8">
-        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Primary" })" class="img-responsive hidden-sm hidden-xs" alt="@(Model[0].Name)">
-        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[0].Name)">
+        <div class="shop-item-img hidden-sm hidden-xs">
+            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[0].Name)">
+            <div class="shop-tools text-right">
+                <p>Цена: @(Model[0].Price.ToString("c"))</p>
+                <button class="btn btn-default">Подробнее</button>
+                <button class="btn btn-default btn-to-basket">В корзину</button>
+            </div>
+        </div>
         <h5 class="hidden-sm hidden-xs">@(Model[0].Name)</h5>
+        <div class="shop-item-img">
+            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[0].Name)">
+        </div>
         <h5 class="text-center hidden-md hidden-lg">@(Model[0].Name)</h5>
     </div>
     <div class="col-md-4">
-        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[1].ProductID, imageType = "Primary" })" class="img-responsive hidden-sm hidden-xs" alt="@(Model[1].Name)">
-        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[1].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[1].Name)">
+        <div class="shop-item-img hidden-sm hidden-xs">
+            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[1].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[1].Name)">
+            <div class="shop-tools text-right">
+                <p>Цена: @(Model[1].Price.ToString("c"))</p>
+                <button class="btn btn-default">Подробнее</button>
+                <button class="btn btn-default btn-to-basket">В корзину</button>
+            </div>
+        </div>
         <h5 class="hidden-sm hidden-xs">@(Model[1].Name)</h5>
-        <h5 class="text-center hidden-md hidden-lg">@(Model[1].Name)</h5>
+        <div class="shop-item-img">
+            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[1].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[1].Name)">
+            <h5 class="text-center hidden-md hidden-lg">@(Model[1].Name)</h5>
+        </div>
     </div>
 </div>
 <div class="row">
     <div class="col-md-4">
-        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[2].ProductID, imageType = "Primary" })" class="img-responsive hidden-sm hidden-xs" alt="@(Model[2].Name)">
+        <div class="shop-item-img hidden-sm hidden-xs">
+            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[2].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[2].Name)">
+            <div class="shop-tools text-right">
+                <p>Цена: @(Model[2].Price.ToString("c"))</p>
+                <button class="btn btn-default">Подробнее</button>
+                <button class="btn btn-default btn-to-basket">В корзину</button>
+            </div>
+        </div>
         <h5 class="hidden-sm hidden-xs">@(Model[2].Name)</h5>
-        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[2].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[2].Name)">
-        <h5 class="text-center hidden-md hidden-lg">@(Model[2].Name)</h5>
+        <div class="shop-item-img">
+            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[2].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[2].Name)">
+            <h5 class="text-center hidden-md hidden-lg">@(Model[2].Name)</h5>
+        </div>
     </div>
     <div class="col-md-8">
-        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[3].ProductID, imageType = "Primary" })" class="img-responsive hidden-sm hidden-xs" alt="@(Model[3].Name)">
+        <div class="shop-item-img hidden-sm hidden-xs">
+            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[3].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[3].Name)">
+            <div class="shop-tools text-right">
+                <p>Цена: @(Model[3].Price.ToString("c"))</p>
+                <button class="btn btn-default">Подробнее</button>
+                <button class="btn btn-default btn-to-basket">В корзину</button>
+            </div>
+        </div>
         <h5 class="hidden-sm hidden-xs">@(Model[3].Name)</h5>
-        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[3].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[3].Name)">
-        <h5 class="text-center hidden-md hidden-lg">@(Model[3].Name)</h5>
+        <div class="shop-item-img">
+            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[3].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[3].Name)">
+            <h5 class="text-center hidden-md hidden-lg">@(Model[3].Name)</h5>
+        </div>
     </div>
 </div>

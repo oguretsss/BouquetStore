@@ -57,9 +57,11 @@ h3 {
     border-radius: 50%;
 }
 
-.fruit-header nav {
-  margin-top: 20px;
+.fruit-header{
+    margin-top: 20px;
+    margin-bottom: 35px;
 }
+
 .fruit-header .navbar-brand {
   height: 130px;
   font-size: 1.7em;
@@ -105,6 +107,45 @@ h3 {
    left: 23px;
    width: 21px;
  }
+}
+
+.shop-item-img{
+    position:relative;
+}
+
+.shop-item-img .shop-tools{
+    position:absolute;
+    bottom: 0px;
+    right:0px;
+    height: 30%;
+    width: 100%;
+    background-color: rgba(255,255,255,0.7);
+    color: #000;
+    padding-right: 10px;
+    display:none;
+}
+
+.shop-item-img:hover .shop-tools{
+    display:block;
+}
+
+.shop-tools button{
+    border-radius: 0;
+    border: none;
+    background-color: #000;
+    color: #fff;
+}
+
+.shop-tools .btn-to-basket{
+   background-color: #31b82c;
+}
+
+.shop-tools .btn-to-basket:hover{
+   background-color: #e6e6e6;
+}
+
+.shop-tools p{
+    font-size: 1.3em;
 }
 
 
