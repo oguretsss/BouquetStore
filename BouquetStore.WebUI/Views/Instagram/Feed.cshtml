@@ -1,5 +1,7 @@
 ﻿@model List<string>
-
+@{
+    int i = 0;
+}
 <div class="row text-center">
     <div class="col-md-2"></div>
     <div class="col-md-8">
@@ -9,11 +11,13 @@
 </div>
 <div class="row">
     @foreach (var pic in Model)
-            {
-        <div class="col-md-4 thumb">
-            <a href="#">
-                <div class="warp"><img class="img-thumbnail center-block" src="@pic" width="300" height="300" alt=""></div>
+    {
+        <div class="col-md-4 thumb @(i > 3 ? "hidden-sm" : "")">
+            <a href="https://www.instagram.com/fruit_is_goood/" target="_blank">
+                <div class="warp"><img class="img-thumbnail center-block" src="@pic" width="300" height="300" alt="Fruit Is Good в Instagram"></div>
             </a>
         </div>
+        i++;
+
     }
 </div>
