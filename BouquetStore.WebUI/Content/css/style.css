@@ -113,20 +113,27 @@ h3 {
     position:relative;
 }
 
-.shop-item-img .shop-tools{
+.shop-tools{
+    background-color: rgba(255,255,255,0.7);
+    color: #000;
+    padding-right: 10px;
+}
+
+.tools-floating{
     position:absolute;
     bottom: 0px;
     right:0px;
     height: 30%;
     width: 100%;
-    background-color: rgba(255,255,255,0.7);
-    color: #000;
-    padding-right: 10px;
     display:none;
 }
 
-.shop-item-img:hover .shop-tools{
+.shop-item-img:hover .tools-floating{
     display:block;
+}
+
+.shop-tools form{
+    display: inline;
 }
 
 .shop-tools button{
@@ -146,6 +153,22 @@ h3 {
 
 .shop-tools p{
     font-size: 1.3em;
+}
+
+.tools-sm{
+    margin-bottom: 50px;
+    padding-right:0;
+}
+
+.tools-sm p{
+    font-size: 1.0em;
+}
+
+.tools-sm button{
+    min-width: 30%;
+    max-width: 49%;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 

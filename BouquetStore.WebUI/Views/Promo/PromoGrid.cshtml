@@ -8,28 +8,51 @@
     <div class="col-md-2"></div>
 </div>
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-8 col-sm-12">
         <div class="shop-item-img hidden-sm hidden-xs">
             <img src="@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[0].Name)">
-            <div class="shop-tools text-right">
+            <div class="shop-tools tools-floating text-right">
                 <p>Цена: @(Model[0].Price.ToString("c"))</p>
                 <button class="btn btn-default">Подробнее</button>
-                <button class="btn btn-default btn-to-basket">В корзину</button>
+                @using (Html.BeginForm("AddToCart", "Cart"))
+                {
+                  @Html.Hidden("productId", Model[0].ProductID)
+                  @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                  @Html.Hidden("isPromo", true)
+                  <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+                }
             </div>
         </div>
         <h5 class="hidden-sm hidden-xs">@(Model[0].Name)</h5>
-        <div class="shop-item-img">
-            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[0].Name)">
-        </div>
         <h5 class="text-center hidden-md hidden-lg">@(Model[0].Name)</h5>
+        <div class="shop-item-img hidden-md hidden-lg">
+            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Secondary" })" class="img-responsive center-block" alt="@(Model[0].Name)">
+            <div class="shop-tools tools-sm text-center">
+              <p>Цена: @(Model[0].Price.ToString("c"))</p>
+              <button class="btn btn-default">Подробнее</button>
+              @using (Html.BeginForm("AddToCart", "Cart"))
+              {
+                @Html.Hidden("productId", Model[0].ProductID)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                @Html.Hidden("isPromo", true)
+                <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+              }
+            </div>
+        </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-4 col-sm-12">
         <div class="shop-item-img hidden-sm hidden-xs">
             <img src="@Url.Action("GetImage", "Promo", new { productId = Model[1].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[1].Name)">
-            <div class="shop-tools text-right">
-                <p>Цена: @(Model[1].Price.ToString("c"))</p>
-                <button class="btn btn-default">Подробнее</button>
-                <button class="btn btn-default btn-to-basket">В корзину</button>
+            <div class="shop-tools tools-floating text-right">
+              <p>Цена: @(Model[1].Price.ToString("c"))</p>
+              <button class="btn btn-default">Подробнее</button>
+              @using (Html.BeginForm("AddToCart", "Cart"))
+              {
+                @Html.Hidden("productId", Model[1].ProductID)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                @Html.Hidden("isPromo", true)
+                <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+              }
             </div>
         </div>
         <h5 class="hidden-sm hidden-xs">@(Model[1].Name)</h5>
@@ -40,13 +63,19 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-4 col-sm-12">
         <div class="shop-item-img hidden-sm hidden-xs">
             <img src="@Url.Action("GetImage", "Promo", new { productId = Model[2].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[2].Name)">
-            <div class="shop-tools text-right">
+            <div class="shop-tools tools-floating text-right">
                 <p>Цена: @(Model[2].Price.ToString("c"))</p>
                 <button class="btn btn-default">Подробнее</button>
-                <button class="btn btn-default btn-to-basket">В корзину</button>
+                @using (Html.BeginForm("AddToCart", "Cart"))
+                {
+                  @Html.Hidden("productId", Model[2].ProductID)
+                  @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                  @Html.Hidden("isPromo", true)
+                  <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+                }
             </div>
         </div>
         <h5 class="hidden-sm hidden-xs">@(Model[2].Name)</h5>
@@ -55,13 +84,19 @@
             <h5 class="text-center hidden-md hidden-lg">@(Model[2].Name)</h5>
         </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 col-sm-12">
         <div class="shop-item-img hidden-sm hidden-xs">
             <img src="@Url.Action("GetImage", "Promo", new { productId = Model[3].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[3].Name)">
-            <div class="shop-tools text-right">
+            <div class="shop-tools tools-floating text-right">
                 <p>Цена: @(Model[3].Price.ToString("c"))</p>
                 <button class="btn btn-default">Подробнее</button>
-                <button class="btn btn-default btn-to-basket">В корзину</button>
+                @using (Html.BeginForm("AddToCart", "Cart"))
+                {
+                  @Html.Hidden("productId", Model[3].ProductID)
+                  @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                  @Html.Hidden("isPromo", true)
+                  <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+                }
             </div>
         </div>
         <h5 class="hidden-sm hidden-xs">@(Model[3].Name)</h5>
