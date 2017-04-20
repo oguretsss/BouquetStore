@@ -39,10 +39,7 @@
             <li><a href="#">Контакты</a></li>
             <li>@Html.ActionLink("Доставка", "Index", "Order")</li>
             <li>
-              <a href="@(Url.Action("Index", "Cart"))" class="navbar-icon-link">
-                <i class="fa fa-shopping-basket fa-2x icon-basket" aria-hidden="true"></i>
-                <div class="basket-amount hidden">1</div>
-              </a>
+              @Html.Action("Summary", "Cart")
             </li>
           </ul>
         </div>

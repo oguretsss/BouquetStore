@@ -17,17 +17,17 @@ namespace BouquetStore.WebUI.Controllers
     {
       repository = repo;
     }
-    public ViewResult Index(string returnUrl)
+    public ViewResult Index(Cart cart, string returnUrl)
     {
       return View(new CartIndexViewModel
       {
-        Cart = GetCart(),
+        Cart = cart,
         ReturnUrl = returnUrl
       });
     }
     
     [HttpPost]
-    public RedirectToRouteResult AddToCart(int productID, string returnUrl, bool isPromo = false)
+    public RedirectToRouteResult AddToCart(Cart cart, int productID, string returnUrl, bool isPromo = false)
     {
       ProductAbstract product;
       if(isPromo)
@@ -41,21 +41,35 @@ namespace BouquetStore.WebUI.Controllers
 
       if (product != null)
       {
-        GetCart().AddItem(product, 1);
+        cart.AddItem(product, 1);
       }
 
       return RedirectToAction("Index", new { returnUrl });
     }
 
-    private Cart GetCart()
+    public RedirectToRouteResult RemoveFromCart(Cart cart, int productID, string returnUrl, bool isPromo = false)
     {
-      Cart cart = (Cart)Session["Cart"];
-      if (cart == null)
+      ProductAbstract product;
+      if (isPromo)
       {
-        cart = new Cart();
-        Session["Cart"] = cart;
+        product = repository.PromoProducts.FirstOrDefault(x => x.ProductID == productID);
       }
-      return cart;
+      else
+      {
+        product = repository.Products.FirstOrDefault(x => x.ProductID == productID);
+      }
+
+      if (product != null)
+      {
+        cart.RemoveLine(product);
+      }
+      return RedirectToAction("Index", new { returnUrl });
     }
+
+    public PartialViewResult Summary(Cart cart)
+    {
+      return PartialView(cart);
+    }
+
   }
 }

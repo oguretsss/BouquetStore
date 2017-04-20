@@ -1,0 +1,9 @@
+﻿@model BouquetStore.Domain.Entities.Cart
+@{ 
+  int totalQuantity = Model.Lines.Sum(x => x.Quantity);
+}
+
+<a href="@(Url.Action("Index", "Cart"))" class="navbar-icon-link">
+  <i class="fa fa-shopping-basket fa-2x icon-basket" aria-hidden="true"></i>
+  <div class="basket-amount @(Model.Lines.Count() == 0 ? "hidden" : "")">@(totalQuantity)</div>
+</a>

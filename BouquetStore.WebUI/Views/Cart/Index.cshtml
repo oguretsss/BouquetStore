@@ -6,7 +6,8 @@
 }
 
 <h2>Ваша корзина</h2>
-<table class="table">
+<h3 class="text-center@(Model.Cart.Lines.Count() != 0 ? "hidden" : "")">Корзина пуста!</h3>
+<table class="table @(Model.Cart.Lines.Count() == 0 ? "hidden" : "")">
   <thead>
     <tr>
       <th>Кол-во</th>
@@ -16,15 +17,27 @@
     </tr>
   </thead>
   <tbody>
-    @foreach (var item in Model.Cart.Lines)
-    {
-      <tr>
-        <th>@item.Quantity</th>
-        <th>@item.Product.Name</th>
-        <th>@item.Product.Price.ToString("c")</th>
-        <th>@((item.Product.Price * item.Quantity).ToString("c"))</th>
-      </tr>
-    }
+  @foreach (var item in Model.Cart.Lines)
+  {
+    <tr>
+      <td>@item.Quantity</td>
+      <td>@item.Product.Name</td>
+      <td>@item.Product.Price.ToString("c")</td>
+      <td>@((item.Product.Price * item.Quantity).ToString("c"))</td>
+      <td>
+        @using (Html.BeginForm("RemoveFromCart", "Cart"))
+        {
+          @Html.Hidden("ProductID", item.Product.ProductID)
+          @Html.Hidden("isPromo", (item.Product.GetType() == typeof(BouquetStore.Domain.Entities.SeasonPromoProduct)))
+          @Html.HiddenFor(x => x.ReturnUrl)
+          <input class="btn btn-sm btn-warning"
+                 type="submit" value="Remove" />
+        }
+      </td>
+      <td>IsPromo? + @(item.Product.GetType() == typeof(BouquetStore.Domain.Entities.SeasonPromoProduct))</td>
+    </tr>
+    
+  }
   </tbody>
   <tfoot>
     <tr>

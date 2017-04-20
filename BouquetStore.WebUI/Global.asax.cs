@@ -1,4 +1,6 @@
 ﻿using BouquetStore.Domain.Concrete;
+using BouquetStore.Domain.Entities;
+using BouquetStore.WebUI.Infrastructure.Binders;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -17,6 +19,7 @@ namespace BouquetStore.WebUI
             //Database.SetInitializer<EFDbContext>(null);
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-        }
+            ModelBinders.Binders.Add(typeof(Cart), new CartModelBinder());
+    }
     }
 }
