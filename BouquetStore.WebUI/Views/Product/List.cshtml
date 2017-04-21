@@ -3,21 +3,29 @@
 @model ProductsListViewModel<Product>
 
 @{
-    ViewBag.Title = "List";
+  ViewBag.Title = "List";
 }
 
 <h2>List</h2>
 
 <table class="table table-striped">
-    <tr><th>Product</th><th>Description</th><th>Price</th></tr>
-    @foreach (var item in Model.Products)
-    {
-        <tr>
-            <td>@item.Name</td>
-            <td>@item.Description</td>
-            <td>@item.Price.ToString()</td>
-        </tr>
-    }
+  <tr><th>Product</th><th>Description</th><th>Price</th></tr>
+  @foreach (var item in Model.Products)
+  {
+    <tr>
+      <td>@item.Name</td>
+      <td>@item.Description</td>
+      <td>@item.Price.ToString()</td>
+      <td>
+        @using (Html.BeginForm("AddToCart", "Cart"))
+        {
+          @Html.Hidden("productId", item.ProductID)
+          @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+          <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+        }
+      </td>
+    </tr>
+  }
 </table>
-    @Html.Action("Feed", "Instagram")
+@Html.Action("Feed", "Instagram")
 
