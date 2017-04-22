@@ -128,6 +128,15 @@ h3 {
     display:none;
 }
 
+.btn{
+  border-radius: 0;
+  border: none;
+}
+
+.btn-default{
+  background-color: #000;
+  color: #fff;
+}
 .shop-item-img:hover .tools-floating{
     display:block;
 }

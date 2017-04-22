@@ -5,8 +5,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Ваша корзина</h2>
-<h3 class="text-center@(Model.Cart.Lines.Count() != 0 ? "hidden" : "")">Корзина пуста!</h3>
+<h2 class="text-center">Ваша корзина</h2>
+<h3 class="text-center@(Model.Cart.Lines.Count() != 0 ? " hidden" : "")">Корзина пуста!</h3>
 <table class="table @(Model.Cart.Lines.Count() == 0 ? "hidden" : "")">
   <thead>
     <tr>
@@ -49,6 +49,6 @@
   </tfoot>
 </table>
 <div class="text-center">
-  <a class="btn btn-primary" href="@(Model.ReturnUrl ?? Url.Action("Index", "Home"))">В магазин</a>
+  <a class="btn btn-default" href="@(Model.ReturnUrl ?? Url.Action("Index", "Home"))">В магазин</a>
 </div>
 
