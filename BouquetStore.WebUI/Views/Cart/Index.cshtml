@@ -2,52 +2,51 @@
 
 @{
     ViewBag.Title = "Fruit is Good | Оригинальные букеты";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_CartLayout.cshtml";
 }
 
 <h2 class="text-center">Ваша корзина</h2>
-<h3 class="text-center@(Model.Cart.Lines.Count() != 0 ? " hidden" : "")">Корзина пуста!</h3>
-<table class="table @(Model.Cart.Lines.Count() == 0 ? "hidden" : "")">
-  <thead>
-    <tr>
-      <th>Кол-во</th>
-      <th>Букет</th>
-      <th class="text-right">Цена</th>
-      <th class="text-right">Подытог</th>
-    </tr>
-  </thead>
-  <tbody>
+<section id="cart-contents">
+  <h3 class="text-center@(Model.Cart.Lines.Count() != 0 ? " hidden" : "")">Корзина пуста!</h3>
   @foreach (var item in Model.Cart.Lines)
   {
-    <tr>
-      <td>@item.Quantity</td>
-      <td>@item.Product.Name</td>
-      <td>@item.Product.Price.ToString("c")</td>
-      <td>@((item.Product.Price * item.Quantity).ToString("c"))</td>
-      <td>
+  bool isPromo = item.Product.GetType() == typeof(BouquetStore.Domain.Entities.SeasonPromoProduct);
+  <div class="row cart-product">
+      <div class="col-md-3 col-sm-12 col-xs-12">
+        @if (isPromo)
+        {
+          <img src="@Url.Action("GetImage", "Promo", new { productId = item.Product.ProductID, imageType = "Secondary" })" class="img-responsive center-block" alt="@(item.Product.Name)">
+        }
+        else
+        {
+          <img src="@Url.Action("GetImage", "Product", new { productId = item.Product.ProductID })" class="img-responsive center-block" alt="@(item.Product.Name)">
+        }
+      </div>
+      <div class="col-md-4 col-sm-12 col-xs-12">
+        <p class="text-center">@item.Product.Name</p>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-4">
+        <p class="text-center">@item.Quantity</p>
+      </div>
+      <div class="col-md-2 col-sm-4 col-xs-4">
+        <p class="text-center">@((item.Quantity * item.Product.Price).ToString("c"))</p>
+      </div>
+      <div class="col-md-1 col-sm-4 col-xs-4 text-center">
         @using (Html.BeginForm("RemoveFromCart", "Cart"))
         {
           @Html.Hidden("ProductID", item.Product.ProductID)
-          @Html.Hidden("isPromo", (item.Product.GetType() == typeof(BouquetStore.Domain.Entities.SeasonPromoProduct)))
+          @Html.Hidden("isPromo", isPromo)
           @Html.HiddenFor(x => x.ReturnUrl)
-          <input class="btn btn-sm btn-warning"
-                 type="submit" value="Remove" />
+          <input class="btn btn-sm btn-danger"
+                 type="submit" value="X" />
         }
-      </td>
-      <td>IsPromo? + @(item.Product.GetType() == typeof(BouquetStore.Domain.Entities.SeasonPromoProduct))</td>
-    </tr>
-    
+      </div>
+  </div>
   }
-  </tbody>
-  <tfoot>
-    <tr>
-      <td colspan="3" class="text-right">Total:</td>
-      <td class="text-right">
-        @Model.Cart.ComputeTotalValue().ToString("c")
-      </td>
-    </tr>
-  </tfoot>
-</table>
+  <div class="text-center">
+    <p>Общая стоимость товаров: @Model.Cart.ComputeTotalValue().ToString("c")</p>
+  </div>
+</section>
 <div class="text-center">
   <a class="btn btn-default" href="@(Model.ReturnUrl ?? Url.Action("Index", "Home"))">В магазин</a>
 </div>
