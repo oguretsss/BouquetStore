@@ -25,20 +25,22 @@
       <div class="col-md-4 col-sm-12 col-xs-12">
         <p class="text-center">@item.Product.Name</p>
       </div>
-      <div class="col-md-2 col-sm-4 col-xs-4">
+      <div class="col-md-2 col-sm-6 col-xs-6">
         <p class="text-center">@item.Quantity</p>
       </div>
-      <div class="col-md-2 col-sm-4 col-xs-4">
+      <div class="col-md-2 col-sm-6 col-xs-6">
         <p class="text-center">@((item.Quantity * item.Product.Price).ToString("c"))</p>
       </div>
-      <div class="col-md-1 col-sm-4 col-xs-4 text-center">
+      <div class="col-md-1 col-sm-12 col-xs-12 text-center">
         @using (Html.BeginForm("RemoveFromCart", "Cart"))
         {
           @Html.Hidden("ProductID", item.Product.ProductID)
           @Html.Hidden("isPromo", isPromo)
           @Html.HiddenFor(x => x.ReturnUrl)
-          <input class="btn btn-sm btn-danger"
+          <input class="btn btn-sm btn-danger hidden-sm hidden-xs"
                  type="submit" value="X" />
+          <input class="btn btn-sm btn-danger hidden-lg hidden-md"
+                       type="submit" value="Удалить" />
         }
       </div>
   </div>
