@@ -6,26 +6,43 @@
   ViewBag.Title = "Оригинальные букеты | Fruit is Good";
 }
 
-<h2>List</h2>
+<h2 class="text-center">Все букеты</h2>
 
-<table class="table table-striped">
-  <tr><th>Product</th><th>Description</th><th>Price</th></tr>
+<div class="row">
   @foreach (var item in Model.Products)
   {
-    <tr>
-      <td>@item.Name</td>
-      <td>@item.Description</td>
-      <td>@item.Price.ToString()</td>
-      <td>
-        @using (Html.BeginForm("AddToCart", "Cart"))
+    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 product-container">
+      <div class="shop-item-img hidden-sm hidden-xs">
+        <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@(item.Name)">
+        <div class="shop-tools tools-floating text-right">
+          <p>Цена: @(item.Price.ToString("c"))</p>
+          <button class="btn btn-default">Подробнее</button>
+          @using (Html.BeginForm("AddToCart", "Cart"))
         {
-          @Html.Hidden("productId", item.ProductID)
-          @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-          <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
-        }
-      </td>
-    </tr>
+            @Html.Hidden("productId", item.ProductID)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            @Html.Hidden("isPromo", false)
+            <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+          }
+        </div>
+      </div>
+      <h5 class="hidden-sm hidden-xs">@(item.Name)</h5>
+      <h5 class="text-center hidden-md hidden-lg">@(item.Name)</h5>
+      <div class="shop-item-img hidden-md hidden-lg">
+        <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@(item.Name)">
+        <div class="shop-tools tools-sm text-center">
+          <p>Цена: @(item.Price.ToString("c"))</p>
+          <button class="btn btn-default">Подробнее</button>
+          @using (Html.BeginForm("AddToCart", "Cart"))
+        {
+            @Html.Hidden("productId", item.ProductID)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            @Html.Hidden("isPromo", false)
+            <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+          }
+        </div>
+      </div>
+    </div>
   }
-</table>
-@Html.Action("Feed", "Instagram")
+</div>
 
