@@ -23,7 +23,15 @@ namespace BouquetStore.WebUI.Controllers
                 .Select(x => x.Category)
                 .Distinct()
                 .OrderBy(x => x);
-            return PartialView(categories);
+            switch (caller)
+            {
+              case "Product":
+                return PartialView("ShopCategories", categories);
+              case "Admin":
+                return PartialView("ProductCategories", categories);
+              default:
+                return PartialView("ProductCategories", categories);
+            }
         }
     }
 }
