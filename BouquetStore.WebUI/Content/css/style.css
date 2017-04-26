@@ -180,6 +180,16 @@ h3 {
     margin-left: auto;
 }
 
+.cart-product{
+  height: 200px;
+  vertical-align:middle;
+}
 
+.cart-product>td.td-cart{
+  padding-left: 15px;
+  vertical-align:middle;
+  border-top: none;
+  border-bottom: 2px solid black;
+}
 
 
