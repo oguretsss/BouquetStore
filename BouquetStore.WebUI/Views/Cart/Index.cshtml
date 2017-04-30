@@ -1,13 +1,14 @@
 ﻿@model BouquetStore.WebUI.Models.CartIndexViewModel
 
 @{
-    ViewBag.Title = "Оригинальные букеты | Fruit is Good";
-    Layout = "~/Views/Shared/_CartLayout.cshtml";
+  ViewBag.Title = "Оригинальные букеты | Fruit is Good";
+  Layout = "~/Views/Shared/_CartLayout.cshtml";
+  bool emptyCart = Model.Cart.Lines.Count() == 0;
 }
 
 <h2 class="text-center">Ваша корзина</h2>
 <section id="cart-contents">
-  <h3 class="text-center@(Model.Cart.Lines.Count() != 0 ? " hidden" : "")">Корзина пуста!</h3>
+  <h3 class="text-center@(!emptyCart ? " hidden" : "")">Корзина пуста!</h3>
   <table class="table">
     @foreach (var item in Model.Cart.Lines)
     {
@@ -47,10 +48,11 @@
     }
   </table>
   <div class="text-center">
-    <p>Общая стоимость товаров: @Model.Cart.ComputeTotalValue().ToString("c0")</p>
+    <p class="@(emptyCart ? "hidden" : "")">Общая стоимость товаров: @Model.Cart.ComputeTotalValue().ToString("c0")</p>
   </div>
 </section>
 <div class="text-center">
   <a class="btn btn-default" href="@(Model.ReturnUrl ?? Url.Action("Index", "Home"))">В магазин</a>
+  @Html.ActionLink("Оформить заказ", "Checkout", null, new { @class = "btn btn-confirm" + (emptyCart ? " hidden" : "") })
 </div>
 
