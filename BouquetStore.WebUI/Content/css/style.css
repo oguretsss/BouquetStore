@@ -137,6 +137,15 @@ h3 {
   background-color: #000;
   color: #fff;
 }
+
+.btn-confirm{
+  background-color: #31b82c;
+  color: #fff;
+}
+
+.btn-confirm:hover{
+  background-color: #e6e6e6;
+}
 .shop-item-img:hover .tools-floating{
     display:block;
 }
