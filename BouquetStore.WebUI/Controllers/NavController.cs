@@ -15,10 +15,11 @@ namespace BouquetStore.WebUI.Controllers
             repository = repo;
         }
         // GET: Nav
-        public PartialViewResult ProductCategories(string caller = "Product", string actionName = "List")
+        public PartialViewResult ProductCategories(string caller = "Product", string actionName = "List", string category = null)
         {
             ViewBag.controllerName = caller;
             ViewBag.actionName = actionName;
+            ViewBag.selectedCategory = category;
             IEnumerable<string> categories = repository.Products
                 .Select(x => x.Category)
                 .Distinct()

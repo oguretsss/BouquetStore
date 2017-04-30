@@ -21,7 +21,7 @@ namespace BouquetStore.WebUI.Controllers
         {
             SeasonPromoProduct[] Products = repository.PromoProducts
                 .OrderBy(p => p.ImageNumberInGrid)
-                .Take(4)
+                //.Take(4)
                 .ToArray();
 
             return PartialView(Products);

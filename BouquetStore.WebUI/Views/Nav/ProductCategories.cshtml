@@ -17,6 +17,6 @@
         category = link
     }, new
     {
-    @class = "btn btn-block btn-default btn-md"
+    @class = "btn btn-block btn-default btn-md" + (link == ViewBag.selectedCategory ? " current-category" : "")
     })
 }
