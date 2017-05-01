@@ -119,7 +119,7 @@
       </div>
     </div>
   </footer>
-  <script>
+  <script type="text/javascript">
     $(document).ready(function () {
       $('#categories a').click(function () {
         $('#categories a').removeClass('current-category');
@@ -131,6 +131,14 @@
         return false;
       });
     });
+    function OnBegin() {
+      $(this).find('button').text("Запрос...");
+    }
+    function OnSuccess(data) {
+      var elem = $(this).find('button');
+      elem.text("Добавлено!");
+      setTimeout(function () { elem.text('В корзину'); }, 3000)
+    }
   </script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="~/Scripts/bootstrap.min.js"></script>

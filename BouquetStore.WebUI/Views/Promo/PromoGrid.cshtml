@@ -3,7 +3,9 @@
 @{ 
   AjaxOptions ajaxOpts = new AjaxOptions
   {
-    UpdateTargetId = "cart-summary"
+    UpdateTargetId = "cart-summary",
+    OnBegin = "OnBegin",
+    OnSuccess = "OnSuccess"
   };
 }
 <div class="row text-center">

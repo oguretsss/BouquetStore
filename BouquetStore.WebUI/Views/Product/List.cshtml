@@ -6,14 +6,15 @@
   ViewBag.Title = "Оригинальные букеты | Fruit is Good";
   AjaxOptions ajaxOpts = new AjaxOptions
   {
-    UpdateTargetId = "cart-summary"
+    UpdateTargetId = "cart-summary",
+    OnBegin = "OnBegin",
+    OnSuccess = "OnSuccess"
   };
 }
-
-<h2 class="text-center">Все букеты</h2>
+<h2 class="text-center">Магазин</h2>
 <div class="row">
       @Html.Action("ProductCategories", "Nav", new { caller = "Product", actionName = "List" })
-    </div>
+</div>
 <section id="grid-container">
     <div id="product-grid" class="row">
       @foreach (var item in Model.Products)
@@ -53,4 +54,8 @@
       }
     </div>
 </section>
-
+<section id="order-original-bouquet">
+  <div class="text-center">
+    <button class="btn btn-default btn-to-basket">ЗАКАЗАТЬ ОРИГИНАЛЬНЫЙ БУКЕТ</button>
+  </div>
+</section>
