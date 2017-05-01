@@ -4,6 +4,10 @@
 
 @{
   ViewBag.Title = "Оригинальные букеты | Fruit is Good";
+  AjaxOptions ajaxOpts = new AjaxOptions
+  {
+    UpdateTargetId = "cart-summary"
+  };
 }
 
 <h2 class="text-center">Все букеты</h2>
@@ -20,7 +24,7 @@
             <div class="shop-tools tools-floating text-center">
               <p> </p>
               <button class="btn btn-default">Подробнее</button>
-              @using (Html.BeginForm("AddToCart", "Cart"))
+              @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
         {
                 @Html.Hidden("productId", item.ProductID)
                 @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
@@ -35,7 +39,7 @@
             <div class="shop-tools tools-sm text-center">
               <p>Цена: @(item.Price.ToString("c0"))</p>
               <button class="btn btn-default">Подробнее</button>
-              @using (Html.BeginForm("AddToCart", "Cart"))
+              @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
         {
                 @Html.Hidden("productId", item.ProductID)
                 @Html.Hidden("returnUrl", Request.Url.PathAndQuery)

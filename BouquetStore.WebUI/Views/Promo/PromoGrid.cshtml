@@ -1,5 +1,11 @@
 ﻿@model BouquetStore.Domain.Entities.SeasonPromoProduct[]
 
+@{ 
+  AjaxOptions ajaxOpts = new AjaxOptions
+  {
+    UpdateTargetId = "cart-summary"
+  };
+}
 <div class="row text-center">
     <div class="col-md-2"></div>
     <div class="col-md-8">
@@ -15,7 +21,7 @@
           <div class="shop-tools tools-floating text-right">
             <p>Цена: @(Model[0].Price.ToString("c"))</p>
             <button class="btn btn-default">Подробнее</button>
-            @using (Html.BeginForm("AddToCart", "Cart"))
+            @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
             {
               @Html.Hidden("productId", Model[0].ProductID)
               @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
@@ -31,7 +37,7 @@
           <div class="shop-tools tools-sm text-center">
             <p>Цена: @(Model[0].Price.ToString("c"))</p>
             <button class="btn btn-default">Подробнее</button>
-            @using (Html.BeginForm("AddToCart", "Cart"))
+            @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
             {
               @Html.Hidden("productId", Model[0].ProductID)
               @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
@@ -49,7 +55,7 @@
             <div class="shop-tools tools-floating text-right">
               <p>Цена: @(Model[1].Price.ToString("c"))</p>
               <button class="btn btn-default">Подробнее</button>
-              @using (Html.BeginForm("AddToCart", "Cart"))
+              @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
               {
                 @Html.Hidden("productId", Model[1].ProductID)
                 @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
@@ -72,7 +78,7 @@
             <div class="shop-tools tools-floating text-right">
                 <p>Цена: @(Model[2].Price.ToString("c"))</p>
                 <button class="btn btn-default">Подробнее</button>
-                @using (Html.BeginForm("AddToCart", "Cart"))
+                @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
                 {
                   @Html.Hidden("productId", Model[2].ProductID)
                   @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
@@ -93,7 +99,7 @@
             <div class="shop-tools tools-floating text-right">
                 <p>Цена: @(Model[3].Price.ToString("c"))</p>
                 <button class="btn btn-default">Подробнее</button>
-                @using (Html.BeginForm("AddToCart", "Cart"))
+                @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
                 {
                   @Html.Hidden("productId", Model[3].ProductID)
                   @Html.Hidden("returnUrl", Request.Url.PathAndQuery)

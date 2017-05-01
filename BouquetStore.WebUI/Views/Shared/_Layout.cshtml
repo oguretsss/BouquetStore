@@ -40,7 +40,7 @@
             <li><a href="#">О нас</a></li>
             <li><a href="#">Контакты</a></li>
             <li>@Html.ActionLink("Доставка", "Index", "Order")</li>
-            <li>
+            <li  id="cart-summary">
               @Html.Action("Summary", "Cart")
             </li>
           </ul>
@@ -134,5 +134,6 @@
   </script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="~/Scripts/bootstrap.min.js"></script>
+  <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
 </body>
 </html>

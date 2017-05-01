@@ -27,7 +27,7 @@ namespace BouquetStore.WebUI.Controllers
     }
     
     [HttpPost]
-    public RedirectToRouteResult AddToCart(Cart cart, int productID, string returnUrl, bool isPromo = false)
+    public ActionResult AddToCart(Cart cart, int productID, string returnUrl, bool isPromo = false)
     {
       ProductAbstract product;
       if(isPromo)
@@ -44,6 +44,10 @@ namespace BouquetStore.WebUI.Controllers
         cart.AddItem(product, 1);
       }
 
+      if(Request.IsAjaxRequest())
+      {
+        return PartialView("Summary", cart);
+      }
       return RedirectToAction("Index", new { returnUrl });
     }
 
