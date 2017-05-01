@@ -9,6 +9,8 @@
   <link rel="stylesheet" href="~/UI_Drafts/css/font-awesome.min.css">
   <link href="~/Content/css/style.css" rel="stylesheet">
   <script src="~/Scripts/modernizr-2.6.2.js"></script>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>@ViewBag.Title</title>
 </head>
@@ -117,8 +119,19 @@
       </div>
     </div>
   </footer>
-  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('#categories a').click(function () {
+        $('#categories a').removeClass('current-category');
+        var position = $(window).scrollTop();
+        var url = $(this).attr('href');
+        $(this).addClass('current-category');
+        $('#grid-container').load(url + ' #product-grid');
+        $(window).scrollTop(position);
+        return false;
+      });
+    });
+  </script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="~/Scripts/bootstrap.min.js"></script>
 </body>

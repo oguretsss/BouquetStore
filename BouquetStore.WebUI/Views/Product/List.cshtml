@@ -8,43 +8,45 @@
 
 <h2 class="text-center">Все букеты</h2>
 <div class="row">
-    @Html.Action("ProductCategories", "Nav", new { caller = "Product", actionName = "List" })
-</div>
-<div class="row">
-  @foreach (var item in Model.Products)
-  {
-    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 product-container">
-      <div class="shop-item-img hidden-sm hidden-xs">
-        <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@(item.Name)">
-        <div class="shop-tools tools-floating text-center">
-          <p> </p>
-          <button class="btn btn-default">Подробнее</button>
-          @using (Html.BeginForm("AddToCart", "Cart"))
-        {
-            @Html.Hidden("productId", item.ProductID)
-            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-            @Html.Hidden("isPromo", false)
-            <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
-          }
-        </div>
-      </div>
-      <h5 class="text-center">@(item.Name)</h5>
-      <div class="shop-item-img hidden-md hidden-lg">
-        <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@(item.Name)">
-        <div class="shop-tools tools-sm text-center">
-          <p>Цена: @(item.Price.ToString("c0"))</p>
-          <button class="btn btn-default">Подробнее</button>
-          @using (Html.BeginForm("AddToCart", "Cart"))
-        {
-            @Html.Hidden("productId", item.ProductID)
-            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-            @Html.Hidden("isPromo", false)
-            <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
-          }
-        </div>
-      </div>
-      <p class="text-center hidden-sm hidden-xs">@(item.Price.ToString("c0"))</p>
+      @Html.Action("ProductCategories", "Nav", new { caller = "Product", actionName = "List" })
     </div>
-  }
-</div>
+<section id="grid-container">
+    <div id="product-grid" class="row">
+      @foreach (var item in Model.Products)
+      {
+        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 product-container">
+          <div class="shop-item-img hidden-sm hidden-xs">
+            <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@(item.Name)">
+            <div class="shop-tools tools-floating text-center">
+              <p> </p>
+              <button class="btn btn-default">Подробнее</button>
+              @using (Html.BeginForm("AddToCart", "Cart"))
+        {
+                @Html.Hidden("productId", item.ProductID)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                @Html.Hidden("isPromo", false)
+                <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+              }
+            </div>
+          </div>
+          <h5 class="text-center">@(item.Name)</h5>
+          <div class="shop-item-img hidden-md hidden-lg">
+            <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@(item.Name)">
+            <div class="shop-tools tools-sm text-center">
+              <p>Цена: @(item.Price.ToString("c0"))</p>
+              <button class="btn btn-default">Подробнее</button>
+              @using (Html.BeginForm("AddToCart", "Cart"))
+        {
+                @Html.Hidden("productId", item.ProductID)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                @Html.Hidden("isPromo", false)
+                <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+              }
+            </div>
+          </div>
+          <p class="text-center hidden-sm hidden-xs">@(item.Price.ToString("c0"))</p>
+        </div>
+      }
+    </div>
+</section>
 
