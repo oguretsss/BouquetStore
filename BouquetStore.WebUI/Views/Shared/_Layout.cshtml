@@ -132,12 +132,12 @@
       });
     });
     function OnBegin() {
-      $(this).find('button').text("Запрос...");
+      $(this).find('button').text("   ...   ");
     }
     function OnSuccess(data) {
       var elem = $(this).find('button');
-      elem.text("Добавлено!");
-      setTimeout(function () { elem.text('В корзину'); }, 3000)
+      elem.html('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>');
+      setTimeout(function () { elem.html('В корзину'); }, 3000)
     }
   </script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->

@@ -25,6 +25,11 @@ namespace BouquetStore.WebUI.Controllers
         ReturnUrl = returnUrl
       });
     }
+
+    public ViewResult Checkout()
+    {
+      return View(new OrderDetails());
+    }
     
     [HttpPost]
     public ActionResult AddToCart(Cart cart, int productID, string returnUrl, bool isPromo = false)

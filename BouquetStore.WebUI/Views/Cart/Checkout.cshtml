@@ -1,0 +1,36 @@
+﻿@model BouquetStore.Domain.Entities.OrderDetails
+@{
+  ViewBag.Title = "Заказ букета | Fruit Is Good";
+  Layout = "~/Views/Shared/_CartLayout.cshtml";
+}
+
+<h1 class="text-center">Оформление заказа</h1>
+<section id="order-details" class="col-md-6">
+  @using (Html.BeginForm())
+  {
+    <div class="form-group">
+      <label>Ваше имя</label>
+      @Html.TextBoxFor(m => m.Name, new { @class="form-control", required="" } )
+    </div>
+
+    <div class="form-group">
+      <label>Ваш номер телефона</label>
+      @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", type="tel", required = "" })
+    </div>
+
+    <div class="form-group">
+      <label>Комментарий к заказу</label>
+      @Html.TextAreaFor(m => m.OrderComment, new { @class = "form-control", rows="10" })
+    </div>
+
+    <div class="text-center">
+      <input class="btn btn-default btn-to-basket" type="submit" value="Сделать заказ" />
+    </div>
+
+  }
+</section>
+<section id="order-clarification" class="text-center col-md-6">
+  <h3>Важная информация</h3>
+  <p>Дорогие друзья! На данный момент оплататить свой заказ возможно только наличными при получении заказа. Спасибо за понимание =)</p>
+</section>
+
