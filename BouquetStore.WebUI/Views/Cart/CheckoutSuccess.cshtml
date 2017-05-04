@@ -1,0 +1,13 @@
+﻿@model BouquetStore.Domain.Entities.OrderDetails
+@{
+    ViewBag.Title = "CheckoutSuccess";
+}
+
+<h2>Ваш заказ принят. Спасибо=)</h2>
+<h3>Данные о заказе:</h3>
+<ul>
+  <li><b>Имя: </b>@Model.Name</li>
+  <li><b>Комментарий к заказу: </b>@Model.OrderComment</li>
+  <li><b>Телефон: </b>@Model.PhoneNumber</li>
+</ul>
+

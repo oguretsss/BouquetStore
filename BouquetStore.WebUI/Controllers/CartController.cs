@@ -12,10 +12,12 @@ namespace BouquetStore.WebUI.Controllers
   public class CartController : Controller
   {
     private IProductRepository repository;
+    private IOrderProcessor orderProcessor;
 
-    public CartController(IProductRepository repo)
+    public CartController(IProductRepository repo, IOrderProcessor proc)
     {
       repository = repo;
+      orderProcessor = proc;
     }
     public ViewResult Index(Cart cart, string returnUrl)
     {
@@ -30,7 +32,22 @@ namespace BouquetStore.WebUI.Controllers
     {
       return View(new OrderDetails());
     }
-    
+
+    [HttpPost]
+    public ActionResult Checkout(Cart cart, OrderDetails od)
+    {
+      if (ModelState.IsValid)
+      {
+        orderProcessor.ProcessOrder(cart, od);
+        cart.Clear();
+        return View("CheckoutSuccess", od);
+      }
+      else
+      {
+        return View(od);
+      }
+    }
+
     [HttpPost]
     public ActionResult AddToCart(Cart cart, int productID, string returnUrl, bool isPromo = false)
     {

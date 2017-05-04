@@ -236,6 +236,7 @@
     <Content Include="Views\Shared\_CartLayout.cshtml" />
     <Content Include="Views\Nav\ShopCategories.cshtml" />
     <Content Include="Views\Cart\Checkout.cshtml" />
+    <Content Include="Views\Cart\CheckoutSuccess.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
