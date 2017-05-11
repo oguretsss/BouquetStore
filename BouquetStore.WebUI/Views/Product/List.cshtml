@@ -16,46 +16,81 @@
       @Html.Action("ProductCategories", "Nav", new { caller = "Product", actionName = "List" })
 </div>
 <section id="grid-container">
-    <div id="product-grid" class="row">
-      @foreach (var item in Model.Products)
-      {
-        <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 product-container">
-          <div class="shop-item-img hidden-sm hidden-xs">
-            <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@(item.Name)">
-            <div class="shop-tools tools-floating text-center">
-              <p> </p>
-              <button class="btn btn-default">Подробнее</button>
-              @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
-        {
-                @Html.Hidden("productId", item.ProductID)
-                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-                @Html.Hidden("isPromo", false)
-                <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
-              }
+  <div id="product-grid" class="row">
+    @foreach (var item in Model.Products)
+    {
+      string name = item.Name;
+      string price = item.Price.ToString("c0");
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 product-container">
+        <div class="shop-item-img hidden-sm hidden-xs">
+          <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@name">
+          <div class="shop-tools tools-floating text-center">
+            <p></p>
+            <div class="btn btn-default btn-open-description">
+              Подробнее
+              <div class="hidden product-name">@name</div>
+              <div class="hidden product-category">@item.Category</div>
+              <div class="hidden product-description">@item.Description</div>
+              <div class="hidden product-price">@price</div>
             </div>
-          </div>
-          <h5 class="text-center">@(item.Name)</h5>
-          <div class="shop-item-img hidden-md hidden-lg">
-            <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@(item.Name)">
-            <div class="shop-tools tools-sm text-center">
-              <p>Цена: @(item.Price.ToString("c0"))</p>
-              <button class="btn btn-default">Подробнее</button>
-              @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
+            @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
         {
-                @Html.Hidden("productId", item.ProductID)
-                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-                @Html.Hidden("isPromo", false)
-                <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
-              }
-            </div>
+              @Html.Hidden("productId", item.ProductID)
+              @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+              @Html.Hidden("isPromo", false)
+              <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+            }
           </div>
-          <p class="text-center hidden-sm hidden-xs">@(item.Price.ToString("c0"))</p>
         </div>
-      }
-    </div>
+        <h5 class="text-center">@name</h5>
+        <div class="shop-item-img hidden-md hidden-lg">
+          <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@name">
+          <div class="shop-tools tools-sm text-center">
+            <p>Цена: @price</p>
+            <div class="btn-open-description">
+              <button class="btn btn-default">Подробнее</button>
+              <div class="hidden product-name">@name</div>
+              <div class="hidden product-category">@item.Category</div>
+              <div class="hidden product-description">@item.Description</div>
+              <div class="hidden product-price">@price</div>
+            </div>
+            @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
+            {
+              @Html.Hidden("productId", item.ProductID)
+              @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+              @Html.Hidden("isPromo", false)
+              <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+            }
+          </div>
+        </div>
+        <p class="text-center hidden-sm hidden-xs">@price</p>
+      </div>
+    }
+  </div>
 </section>
+
 <section id="order-original-bouquet">
   <div class="text-center">
     <button class="btn btn-default btn-to-basket">ЗАКАЗАТЬ ОРИГИНАЛЬНЫЙ БУКЕТ</button>
   </div>
 </section>
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p>Some text in the modal.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>

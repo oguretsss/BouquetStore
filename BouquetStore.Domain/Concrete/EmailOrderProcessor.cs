@@ -18,7 +18,7 @@ namespace BouquetStore.Domain.Concrete
     public string MailFromName = "Tophail";
     public bool UseSSL = true;
     public string Username = "hestheone30@gmail.com";
-    public string Password = "242byobmf";
+    public string Password = "";
     public string ServerName = "smtp.gmail.com";
     public int ServerPort = 587;
     public bool WriteAsFile = true;
