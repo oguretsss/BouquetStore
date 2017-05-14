@@ -142,7 +142,7 @@
       });
       });
     function OnBegin() {
-      $(this).find('button').text("&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;");
+      $(this).find('button').html('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>');
     }
     function OnSuccess(data) {
       var elem = $(this).find('button');

@@ -26,13 +26,13 @@
           <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@name">
           <div class="shop-tools tools-floating text-center">
             <p></p>
-            <div class="btn btn-default btn-open-description">
+            <button class="btn btn-default btn-open-description">
               Подробнее
               <div class="hidden product-name">@name</div>
               <div class="hidden product-category">@item.Category</div>
               <div class="hidden product-description">@item.Description</div>
               <div class="hidden product-price">@price</div>
-            </div>
+            </button>
             @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
         {
               @Html.Hidden("productId", item.ProductID)
