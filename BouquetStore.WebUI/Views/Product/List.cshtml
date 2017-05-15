@@ -21,17 +21,21 @@
     {
       string name = item.Name;
       string price = item.Price.ToString("c0");
+      string imgSrc = Url.Action("GetImage", "Product", new { productId = item.ProductID });
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 product-container">
         <div class="shop-item-img hidden-sm hidden-xs">
-          <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@name">
+          <img src="@imgSrc" class="img-responsive center-block" alt="@name">
           <div class="shop-tools tools-floating text-center">
             <p></p>
             <button class="btn btn-default btn-open-description">
               Подробнее
-              <div class="hidden product-name">@name</div>
-              <div class="hidden product-category">@item.Category</div>
-              <div class="hidden product-description">@item.Description</div>
-              <div class="hidden product-price">@price</div>
+              <div class="hidden product-modal-info">
+                <div class="product-name">@name</div>
+                <div class="product-category">@item.Category</div>
+                <div class="product-description">@item.Description</div>
+                <div class="product-price">@price</div>
+                <div class="product-img-src">@imgSrc</div>
+              </div>
             </button>
             @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
         {
@@ -44,15 +48,17 @@
         </div>
         <h5 class="text-center">@name</h5>
         <div class="shop-item-img hidden-md hidden-lg">
-          <img src="@Url.Action("GetImage", "Product", new { productId = item.ProductID })" class="img-responsive center-block" alt="@name">
+          <img src="@imgSrc" class="img-responsive center-block" alt="@name">
           <div class="shop-tools tools-sm text-center">
             <p>Цена: @price</p>
             <div class="btn-open-description">
               <button class="btn btn-default">Подробнее</button>
-              <div class="hidden product-name">@name</div>
-              <div class="hidden product-category">@item.Category</div>
-              <div class="hidden product-description">@item.Description</div>
-              <div class="hidden product-price">@price</div>
+              <div class="hidden product-modal-info">
+                <div class="product-name">@name</div>
+                <div class="product-category">@item.Category</div>
+                <div class="product-description">@item.Description</div>
+                <div class="product-price">@price</div>
+              </div>
             </div>
             @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
             {
@@ -82,9 +88,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Modal Header</h4>
+        <h3 class="modal-title">Modal Header</h3>
       </div>
       <div class="modal-body">
+        <h4><b>Категория: </b><span class="category"></span></h4>
         <p>Some text in the modal.</p>
       </div>
       <div class="modal-footer">

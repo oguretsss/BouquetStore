@@ -133,12 +133,16 @@
       });
 
       $(".btn-open-description").click(function () {
-        var modalText = $(this).children(".product-description").text();
-        var modalHeader = $(this).children(".product-name").text();
-        var modalCategory = $(this).children(".product-category").text();
+        var windowInfo = $(this).children(".product-modal-info");
+        var modalText = windowInfo.children(".product-description").text();
+        var modalHeader = windowInfo.children(".product-name").text();
+        var modalCategory = windowInfo.children(".product-category").text();
+        var imgSrc = windowInfo.children(".product-img-src").text();
         $("#myModal").modal();
-        $("#myModal .modal-body").text(modalText);
-        $("#myModal .modal-header h4").text(modalHeader);
+        $("#myModal .modal-body").prepend('<img class="img-responsive" src="' + imgSrc + '" />');
+        $("#myModal .modal-body .category").text(modalCategory);
+        $("#myModal .modal-body p").text(modalText);
+        $("#myModal .modal-header h3").text(modalHeader);
       });
       });
     function OnBegin() {
