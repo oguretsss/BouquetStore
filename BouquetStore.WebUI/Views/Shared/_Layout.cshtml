@@ -132,19 +132,8 @@
         return false;
       });
 
-      $(".btn-open-description").click(function () {
-        var windowInfo = $(this).children(".product-modal-info");
-        var modalText = windowInfo.children(".product-description").text();
-        var modalHeader = windowInfo.children(".product-name").text();
-        var modalCategory = windowInfo.children(".product-category").text();
-        var imgSrc = windowInfo.children(".product-img-src").text();
-        $("#myModal").modal();
-        $("#myModal .modal-body").prepend('<img class="img-responsive" src="' + imgSrc + '" />');
-        $("#myModal .modal-body .category").text(modalCategory);
-        $("#myModal .modal-body p").text(modalText);
-        $("#myModal .modal-header h3").text(modalHeader);
-      });
-      });
+      $('#grid-container').on('click', '.btn-open-description', ShowModal);
+    });
     function OnBegin() {
       $(this).find('button').html('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;...&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>');
     }
@@ -152,6 +141,21 @@
       var elem = $(this).find('button');
       elem.html('<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-check" aria-hidden="true"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>');
       setTimeout(function () { elem.html('В корзину'); }, 3000)
+    }
+
+    function ShowModal() {
+      var windowInfo = $(this).children(".product-modal-info");
+      var modalText = windowInfo.children(".product-description").text();
+      var modalHeader = windowInfo.children(".product-name").text();
+      var modalCategory = windowInfo.children(".product-category").text();
+      var imgSrc = windowInfo.children(".product-img-src").text();
+      $("#myModal").modal();
+      $("#myModal .modal-body .modal-img").attr('src', imgSrc);
+      $("#myModal .modal-body .category").text(modalCategory);
+      $("#myModal .modal-body p").text(modalText);
+      $("#myModal .modal-header h3").text(modalHeader);
+      $("#myModal .modal-footer form").remove();
+      $("#myModal .modal-footer").append($(this).parent().children('.to-cart-form'));
     }
   </script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->

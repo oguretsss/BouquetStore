@@ -37,13 +37,13 @@
                 <div class="product-img-src">@imgSrc</div>
               </div>
             </button>
-            @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
-        {
-              @Html.Hidden("productId", item.ProductID)
-              @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-              @Html.Hidden("isPromo", false)
-              <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
-            }
+              @using (Ajax.BeginForm("AddToCart", "Cart", null, ajaxOpts, new { @class = "to-cart-form" }))
+              {
+                @Html.Hidden("productId", item.ProductID)
+                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+                @Html.Hidden("isPromo", false)
+                <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+              }
           </div>
         </div>
         <h5 class="text-center">@name</h5>
@@ -91,11 +91,12 @@
         <h3 class="modal-title">Modal Header</h3>
       </div>
       <div class="modal-body">
+        <img class="modal-img"/>
         <h4><b>Категория: </b><span class="category"></span></h4>
         <p>Some text in the modal.</p>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      <div class="modal-footer text-left">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
       </div>
     </div>
 
