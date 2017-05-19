@@ -8,22 +8,33 @@
     OnSuccess = "OnSuccess"
   };
 }
-<div class="row text-center">
+
+<section id="product-promo-grid">
+  <div class="row text-center">
     <div class="col-md-2"></div>
     <div class="col-md-8">
-        <h3>Сезонное предложение</h3>
+      <h3>Сезонное предложение</h3>
     </div>
     <div class="col-md-2"></div>
-</div>
-<div class="row">
+  </div>
+  <div class="row">
     <div class="col-md-8 col-sm-12">
       <div class="product-container">
         <div class="shop-item-img hidden-sm hidden-xs">
           <img src="@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[0].Name)">
           <div class="shop-tools tools-floating text-right">
             <p>Цена: @(Model[0].Price.ToString("c"))</p>
-            <button class="btn btn-default">Подробнее</button>
-            @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
+            <button class="btn btn-default btn-open-description">
+              Подробнее
+              <div class="hidden product-modal-info">
+                <div class="product-name">@(Model[0].Name)</div>
+                <div class="product-category">@(Model[0].Category)</div>
+                <div class="product-description">@(Model[0].Description)</div>
+                <div class="product-img-src">@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Secondary" })</div>
+                <div class="product-price">@(Model[0].Price)</div>
+              </div>
+            </button>
+            @using (Ajax.BeginForm("AddToCart", "Cart", null, ajaxOpts, new { @class = "to-cart-form" }))
             {
               @Html.Hidden("productId", Model[0].ProductID)
               @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
@@ -38,8 +49,17 @@
           <img src="@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Secondary" })" class="img-responsive center-block" alt="@(Model[0].Name)">
           <div class="shop-tools tools-sm text-center">
             <p>Цена: @(Model[0].Price.ToString("c"))</p>
-            <button class="btn btn-default">Подробнее</button>
-            @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
+            <button class="btn btn-default btn-open-description">
+            Подробнее
+              <div class="hidden product-modal-info">
+                <div class="product-name">@(Model[0].Name)</div>
+                <div class="product-category">@(Model[0].Category)</div>
+                <div class="product-description">@(Model[0].Description)</div>
+                <div class="product-price">@(Model[0].Price)</div>
+                <div class="product-img-src">@Url.Action("GetImage", "Promo", new { productId = Model[0].ProductID, imageType = "Secondary" })</div>
+              </div>
+            </button>
+            @using (Ajax.BeginForm("AddToCart", "Cart", null, ajaxOpts, new { @class = "to-cart-form" }))
             {
               @Html.Hidden("productId", Model[0].ProductID)
               @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
@@ -52,68 +72,95 @@
 
     </div>
     <div class="col-md-4 col-sm-12">
-        <div class="shop-item-img hidden-sm hidden-xs">
-            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[1].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[1].Name)">
-            <div class="shop-tools tools-floating text-right">
-              <p>Цена: @(Model[1].Price.ToString("c"))</p>
-              <button class="btn btn-default">Подробнее</button>
-              @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
-              {
-                @Html.Hidden("productId", Model[1].ProductID)
-                @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-                @Html.Hidden("isPromo", true)
-                <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
-              }
-            </div>
+      <div class="shop-item-img hidden-sm hidden-xs">
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[1].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[1].Name)">
+        <div class="shop-tools tools-floating text-right">
+          <p>Цена: @(Model[1].Price.ToString("c"))</p>
+          <button class="btn btn-default btn-open-description">
+            <div class="hidden product-modal-info">
+              <div class="product-name">@(Model[1].Name)</div>
+              <div class="product-category">@(Model[1].Category)</div>
+              <div class="product-description">@(Model[1].Description)</div>
+              <div class="product-price">@(Model[1].Price)</div>
+              <div class="product-img-src">@Url.Action("GetImage", "Promo", new { productId = Model[1].ProductID, imageType = "Secondary" })</div>
+            </div>Подробнее
+          </button>
+          @using (Ajax.BeginForm("AddToCart", "Cart", null, ajaxOpts, new { @class = "to-cart-form" }))
+          {
+            @Html.Hidden("productId", Model[1].ProductID)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            @Html.Hidden("isPromo", true)
+            <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+          }
         </div>
-        <h5 class="hidden-sm hidden-xs">@(Model[1].Name)</h5>
-        <div class="shop-item-img">
-            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[1].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[1].Name)">
-            <h5 class="text-center hidden-md hidden-lg">@(Model[1].Name)</h5>
-        </div>
+      </div>
+      <h5 class="hidden-sm hidden-xs">@(Model[1].Name)</h5>
+      <div class="shop-item-img">
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[1].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[1].Name)">
+        <h5 class="text-center hidden-md hidden-lg">@(Model[1].Name)</h5>
+      </div>
     </div>
-</div>
-<div class="row">
+  </div>
+  <div class="row">
     <div class="col-md-4 col-sm-12">
-        <div class="shop-item-img hidden-sm hidden-xs">
-            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[2].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[2].Name)">
-            <div class="shop-tools tools-floating text-right">
-                <p>Цена: @(Model[2].Price.ToString("c"))</p>
-                <button class="btn btn-default">Подробнее</button>
-                @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
-                {
-                  @Html.Hidden("productId", Model[2].ProductID)
-                  @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-                  @Html.Hidden("isPromo", true)
-                  <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
-                }
+      <div class="shop-item-img hidden-sm hidden-xs">
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[2].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[2].Name)">
+        <div class="shop-tools tools-floating text-right">
+          <p>Цена: @(Model[2].Price.ToString("c"))</p>
+          <button class="btn btn-default btn-open-description">
+          Подробнее
+            <div class="hidden product-modal-info">
+              <div class="product-name">@(Model[2].Name)</div>
+              <div class="product-category">@(Model[2].Category)</div>
+              <div class="product-description">@(Model[2].Description)</div>
+              <div class="product-price">@(Model[2].Price)</div>
+              <div class="product-img-src">@Url.Action("GetImage", "Promo", new { productId = Model[2].ProductID, imageType = "Secondary" })</div>
             </div>
+          </button>
+          @using (Ajax.BeginForm("AddToCart", "Cart", null, ajaxOpts, new { @class = "to-cart-form" }))
+          {
+            @Html.Hidden("productId", Model[2].ProductID)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            @Html.Hidden("isPromo", true)
+            <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+          }
         </div>
-        <h5 class="hidden-sm hidden-xs">@(Model[2].Name)</h5>
-        <div class="shop-item-img">
-            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[2].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[2].Name)">
-            <h5 class="text-center hidden-md hidden-lg">@(Model[2].Name)</h5>
-        </div>
+      </div>
+      <h5 class="hidden-sm hidden-xs">@(Model[2].Name)</h5>
+      <div class="shop-item-img">
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[2].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[2].Name)">
+        <h5 class="text-center hidden-md hidden-lg">@(Model[2].Name)</h5>
+      </div>
     </div>
     <div class="col-md-8 col-sm-12">
-        <div class="shop-item-img hidden-sm hidden-xs">
-            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[3].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[3].Name)">
-            <div class="shop-tools tools-floating text-right">
-                <p>Цена: @(Model[3].Price.ToString("c"))</p>
-                <button class="btn btn-default">Подробнее</button>
-                @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
-                {
-                  @Html.Hidden("productId", Model[3].ProductID)
-                  @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
-                  @Html.Hidden("isPromo", true)
-                  <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
-                }
+      <div class="shop-item-img hidden-sm hidden-xs">
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[3].ProductID, imageType = "Primary" })" class="img-responsive" alt="@(Model[3].Name)">
+        <div class="shop-tools tools-floating text-right">
+          <p>Цена: @(Model[3].Price.ToString("c"))</p>
+          <button class="btn btn-default btn-open-description">
+          Подробнее
+            <div class="hidden product-modal-info">
+              <div class="product-name">@(Model[3].Name)</div>
+              <div class="product-category">@(Model[3].Category)</div>
+              <div class="product-description">@(Model[3].Description)</div>
+              <div class="product-price">@(Model[3].Price)</div>
+              <div class="product-img-src">@Url.Action("GetImage", "Promo", new { productId = Model[3].ProductID, imageType = "Secondary" })</div>
             </div>
+          </button>
+          @using (Ajax.BeginForm("AddToCart", "Cart", null, ajaxOpts, new { @class = "to-cart-form" }))
+          {
+            @Html.Hidden("productId", Model[3].ProductID)
+            @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
+            @Html.Hidden("isPromo", true)
+            <button type="submit" class="btn btn-default btn-to-basket">В корзину</button>
+          }
         </div>
-        <h5 class="hidden-sm hidden-xs">@(Model[3].Name)</h5>
-        <div class="shop-item-img">
-            <img src="@Url.Action("GetImage", "Promo", new { productId = Model[3].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[3].Name)">
-            <h5 class="text-center hidden-md hidden-lg">@(Model[3].Name)</h5>
-        </div>
+      </div>
+      <h5 class="hidden-sm hidden-xs">@(Model[3].Name)</h5>
+      <div class="shop-item-img">
+        <img src="@Url.Action("GetImage", "Promo", new { productId = Model[3].ProductID, imageType = "Secondary" })" class="img-responsive hidden-md hidden-lg center-block" alt="@(Model[3].Name)">
+        <h5 class="text-center hidden-md hidden-lg">@(Model[3].Name)</h5>
+      </div>
     </div>
-</div>
+  </div>
+</section>

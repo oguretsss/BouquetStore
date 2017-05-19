@@ -51,16 +51,17 @@
           <img src="@imgSrc" class="img-responsive center-block" alt="@name">
           <div class="shop-tools tools-sm text-center">
             <p>Цена: @price</p>
-            <div class="btn-open-description">
-              <button class="btn btn-default">Подробнее</button>
+            <button class="btn btn-default btn-open-description">
+              Подробнее
               <div class="hidden product-modal-info">
                 <div class="product-name">@name</div>
                 <div class="product-category">@item.Category</div>
                 <div class="product-description">@item.Description</div>
+                <div class="product-img-src">@imgSrc</div>
                 <div class="product-price">@price</div>
               </div>
-            </div>
-            @using (Ajax.BeginForm("AddToCart", "Cart", ajaxOpts))
+            </button>
+            @using (Ajax.BeginForm("AddToCart", "Cart", null, ajaxOpts, new { @class = "to-cart-form" }))
             {
               @Html.Hidden("productId", item.ProductID)
               @Html.Hidden("returnUrl", Request.Url.PathAndQuery)
@@ -80,25 +81,3 @@
     <button class="btn btn-default btn-to-basket">ЗАКАЗАТЬ ОРИГИНАЛЬНЫЙ БУКЕТ</button>
   </div>
 </section>
-<!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h3 class="modal-title">Modal Header</h3>
-      </div>
-      <div class="modal-body">
-        <img class="modal-img"/>
-        <h4><b>Категория: </b><span class="category"></span></h4>
-        <p>Some text in the modal.</p>
-      </div>
-      <div class="modal-footer text-left">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
-      </div>
-    </div>
-
-  </div>
-</div>

@@ -246,3 +246,7 @@ label{
   border: none;
 }
 
+.modal-footer form{
+  display:inline;
+}
+
